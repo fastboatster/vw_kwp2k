@@ -1,10 +1,13 @@
-from . import elm
+import elm
 import serial
 import logging
 
+# TODO test with elm dongle
+
+
 def main():
     #     setup comport
-    ser = serial.Serial(port='\\.\COM6',
+    ser = serial.Serial(port='\\.\COM5',
                         baudrate=115200,
                         bytesize=serial.EIGHTBITS,
                         parity=serial.PARITY_NONE,
