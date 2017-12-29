@@ -47,16 +47,17 @@ class Elm327:
     # this will get updated a lot:
     init_commands = [
                     # 'atz',  # reset
-                    'ath1',  # headers on
-                    'atl0',  # no line breaks, but might to keep them on
-                    'ate0',  # turn off echo
-                    'ats1',  # spaces on, maybe need off
-                    'atpbc001',
-                    'atd1',  # display dlc - number of bytes in a message
-                    'atspb',
-                    'atcm000',
-                    'atcf000',
-                    'atcaf0'
+                    b'ath1',  # headers on
+                    # b'atl0',  # no line breaks, but might to keep them on
+                    b'atl1',  # lets have line breaks on
+                    b'ate0',  # turn off echo
+                    b'ats1',  # spaces on, maybe need off
+                    b'atpbc001',
+                    b'atd1',  # display dlc - number of bytes in a message
+                    b'atspb',
+                    b'atcm000',
+                    b'atcf000',
+                    b'atcaf0'
                      ]
 
     def __init__(self, port):
@@ -66,7 +67,7 @@ class Elm327:
         self.Port = port
         # self.logger = logger
         #
-        self.debug = 0  # debug level, 0 = off, higher is more...
+        self.debug = 255  # debug level, 0 = off, higher is more...
         #
         self.State = 0  # 1 is connected, 0 is disconnected/failed
         self.recwaiting = 0  # 0 = no record waiting (can send new cmd), 1 = record waiting to be retrieved
@@ -136,7 +137,7 @@ class Elm327:
         # self.flush_recv_buf()
         self.SERIAL_FLUSH_buffers()
         time.sleep(0.5)
-        self.SERIAL_SEND_cmd(' ')
+        # self.SERIAL_SEND_cmd(b' ')
         time.sleep(0.5)
         self.SERIAL_FLUSH_buffers()
 
@@ -145,7 +146,7 @@ class Elm327:
         for cmd in self.init_commands:
             self.SEND_cmd(cmd)
             record = self.RTRV_record()
-            logging.debug("Command: " + cmd + " Result: " + repr(record))
+            logging.debug("Command: " + repr(cmd) + " Result: " + repr(record))
 
         # reset protocol to auto
         # self.reset_protocol()
@@ -268,19 +269,19 @@ class Elm327:
 
         # check for pending command results to be retrieved
         if self.recwaiting != 0:
-            # print "ARGH! can't send cmd before result of last command is retrieved!!!"
             raise self.ErrorRtrvBeforeSend("Can't send cmd before result of last command is retrieved!!!")
+
         self.SERIAL_SEND_cmd(cmd)
         # mark that there is now a record waiting to be retrieved
         self.recwaiting = 1
 
-    def RTRV_record(self):
+    def RTRV_record(self, num_packets=10):
         """Get the record of the last command and response from the vehicle"""
 
         # check if there are pending command results to be retrieved
         if self.recwaiting == 0:
             return []
-        record = self.SERIAL_RTRV_record()
+        record = self.SERIAL_RTRV_record(num_packets = num_packets)
         # indicate that there's no messages to be received
         self.recwaiting = 0
         # this record to be returned may be empty if the last command
@@ -697,9 +698,9 @@ class Elm327:
 
     def reset(self):
         """ Resets device"""
-        self.SEND_cmd("atz")  # reset ELM327 firmware
+        self.SEND_cmd(b'atz')  # reset ELM327 firmware
         self.RTRV_record()
-        logging.debug("Performed reset")
+        logging.debug('Performed reset')
 
 
     # def reset_protocol(self):
@@ -778,17 +779,92 @@ class Elm327:
         """Private method for sending any CMD to a serial port"""
         # SEND
         if self.Port.writable():
-            # print "\nwriting " + cmd + " to port..."
-            for c in str(cmd):
-                self.Port.write(c)
-            self.Port.write("\r\n")
-            logging.debug("Wrote " + cmd)
+            self.Port.write(cmd)
+            # TODO need to do something about this, why not send everything at once?
+            # for c in cmd:
+            #     self.Port.write(c)
+            self.Port.write(b'\r')
+            self.Port.flushInput()
+            logging.debug("Wrote " + repr(cmd))
         else:
             raise self.ErrorPortNotWriteable("Couldn't write to serial port")
         return
 
-    def SERIAL_RTRV_record(self):
-        """Private method for retrieving the last command and its result from a serial-connected reader device."""
+    def serial_send_cmd(self, cmd):
+        """Private method for sending any CMD to a serial port"""
+        # SEND
+        if self.Port.writable():
+            self.Port.write(cmd)
+            # wait until all the data gets sent.
+            # TODO In the future, use events to confirm that write was successful
+            while self.Port.out_waiting > 0:
+                time.sleep(0.005)
+            # self.Port.write("\r\n")
+            logging.debug("Wrote " + repr(cmd))
+        else:
+            raise self.ErrorPortNotWriteable("Couldn't write to serial port")
+        return
+
+    def serial_rtrv_record(self):
+        """Private method for retrieving single-line result of a last command
+        from a serial-connected reader device."""
+        # Assumes records are separated by EOL.
+        # max seconds to wait for data
+        max_wait = 1
+        raw_record = []
+        #  raw_record is a list of non-empty strings:
+        line = self.Port.readline(timeout=max_wait)
+        raw_record.append(line)
+        return raw_record
+
+        # while len(raw_record) < 1:
+        #     # we need to have something to reply..
+        #     # print "chars waiting:", self.Port.inWaiting()
+        #     # sys.stdout.flush()
+        #     # while self.Port.inWaiting() > 0:
+        #     while self.Port.in_waiting > 0:
+        #         while 1:
+        #             # read 1 char at a time
+        #             #   until we get to the '>' prompt
+        #             #
+        #             c = self.Port.read(1)
+        #             # we are done once we see the prompt
+        #             if c == '>':
+        #                 # if self.debug > 2:
+        #                 #     print("Raw Record: ", pprint.pprint(raw_record))
+        #                 logging.debug("Read " + repr(raw_record))
+        #                 return raw_record
+        #             # \r = CR , \n = LF
+        #             #  (serial device uses CR + optionally LF, unix text only uses LF)
+        #             # new array entry but only if there is something to add
+        #             elif c == '\r' or c == '\n':
+        #                 if word != '':
+        #                     linebuf.append(word)
+        #                     word = ''
+        #                 if linebuf != []:
+        #                     raw_record.append(linebuf)
+        #                     linebuf = []
+        #             # split line into words
+        #             elif c == ' ':
+        #                 if word != '':
+        #                     linebuf.append(word)
+        #                     word = ''
+        #             # all other chars
+        #             else:
+        #                 word = word + c
+        #
+        #     # wait a bit for the serial line to respond
+        #     # if self.debug > 1:
+        #     #     logging.debug("NO DATA TO READ!!")
+        #     if waited < max_wait:
+        #         waited += try_wait
+        #         time.sleep(try_wait)
+        #     else:
+        #         self.recwaiting = 0
+        #         return []
+
+    def serial_rtrv_records(self, num_expect_lines):
+        """Private method for retrieving multiple results from a serial port."""
         # Assumes records are separated by a '>' prompt.
         # max seconds to wait for data
         max_wait = 3
@@ -813,7 +889,7 @@ class Elm327:
                     # read 1 char at a time
                     #   until we get to the '>' prompt
                     #
-                    c = self.Port.read(1)
+                    c = self.Port.readline()
                     # we are done once we see the prompt
                     if c == '>':
                         # if self.debug > 2:
@@ -838,6 +914,69 @@ class Elm327:
                     # all other chars
                     else:
                         word = word + c
+
+            # wait a bit for the serial line to respond
+            # if self.debug > 1:
+            #     logging.debug("NO DATA TO READ!!")
+            if waited < max_wait:
+                waited += try_wait
+                time.sleep(try_wait)
+            else:
+                self.recwaiting = 0
+                return []
+
+    def SERIAL_RTRV_record(self, num_packets):
+        """Private method for retrieving the last command and its result from a serial-connected reader device."""
+        # Assumes records are separated by a '>' prompt.
+        # max seconds to wait for data
+        max_wait = 3
+        # seconds to wait before trying again
+        try_wait = 0.005
+        tries = max_wait / try_wait
+        # how much we have waited so far
+        waited = 0
+        # RECV
+        raw_record = []
+        #  raw_record is a list of non-empty strings,
+        #  each string is a line of info from the reader
+        word = ''
+        linebuf = []
+        while len(raw_record) < num_packets:
+            # we need to have something to reply..
+            # print "chars waiting:", self.Port.inWaiting()
+            # sys.stdout.flush()
+            # while self.Port.inWaiting() > 0:
+            while self.Port.in_waiting > 0:
+                while 1:
+                    # read 1 char at a time
+                    #   until we get to the '>' prompt
+                    #
+                    c = self.Port.read(1)
+                    # we are done once we see the prompt
+                    if c == b'>' or len(raw_record) == num_packets:
+                        # if self.debug > 2:
+                        #     print("Raw Record: ", pprint.pprint(raw_record))
+                        logging.debug("Read " + repr(raw_record))
+                        return raw_record
+                    # \r = CR , \n = LF
+                    #  (serial device uses CR + optionally LF, unix text only uses LF)
+                    # new array entry but only if there is something to add
+                    elif c == b'\r' or c == b'\n':
+                        if word != '':
+                            linebuf.append(word)
+                            word = ''
+                        if linebuf != []:
+                            raw_record.append(linebuf)
+                            linebuf = []
+                    # split line into words
+                    elif c == b' ':
+                        if word != '':
+                            linebuf.append(word)
+                            word = ''
+                    # all other chars
+                    else:
+                        # word = word + str(c)
+                        word = word + c.decode('utf-8')
 
             # wait a bit for the serial line to respond
             # if self.debug > 1:
