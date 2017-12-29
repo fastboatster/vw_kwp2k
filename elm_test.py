@@ -15,6 +15,7 @@ def main():
     logging.basicConfig(filename='myapp.log')
     elm_instance = elm.Elm327(ser)
     elm_instance.initialize()
+    # test if we can set up a communication channel with engine (mk5 jetta)
     resps = []
     elm_instance.SEND_cmd(b'atsh200')
     resps.append(elm_instance.RTRV_record())

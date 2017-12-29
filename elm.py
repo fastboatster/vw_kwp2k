@@ -133,12 +133,6 @@ class Elm327:
     def initialize(self):
         """ Initializes elm to get it ready to send and receive CAN messages"""
         time.sleep(0.5)
-        # self.SERIAL_SEND_cmd( ' ' )
-        # self.flush_recv_buf()
-        self.SERIAL_FLUSH_buffers()
-        time.sleep(0.5)
-        # self.SERIAL_SEND_cmd(b' ')
-        time.sleep(0.5)
         self.SERIAL_FLUSH_buffers()
 
         self.reset()
@@ -147,96 +141,7 @@ class Elm327:
             self.SEND_cmd(cmd)
             record = self.RTRV_record()
             logging.debug("Command: " + repr(cmd) + " Result: " + repr(record))
-
-        # reset protocol to auto
-        # self.reset_protocol()
-        time.sleep(0.5)
-        # report what protocol was discovered
-        # self.rtrv_attr()
-
-
-    # def connect(self):
-    #     """ Opens serial connection to reader device"""
-    #     if (self.Type == "SERIAL"):
-    #         if (self.Port == None):
-    #             raise self.ErrorNoPortDefined("Can't connect, no serial port defined.")
-    #         elif self.State != 0:
-    #             raise self.ErrorAlreadyConnected("Can't connect, already connected.")
-    #         else:
-    #             # try:
-    #             self.Port.open()
-    #             self.State = 1
-    #             time.sleep(0.5)
-    #             # self.SERIAL_SEND_cmd( ' ' )
-    #             # self.flush_recv_buf()
-    #             self.SERIAL_FLUSH_buffers()
-    #             time.sleep(0.5)
-    #             self.SERIAL_SEND_cmd(' ')
-    #             time.sleep(0.5)
-    #             self.SERIAL_FLUSH_buffers()
-    #             if self.debug > 1:
-    #                 logging.debug("Trying to send reset command...")
-    #             self.reset()
-    #             time.sleep(0.5)
-    #             # reset protocol to auto
-    #             self.reset_protocol()
-    #             time.sleep(0.5)
-    #             # report what protocol was discovered
-    #             self.rtrv_attr()
-    #         # except serial.SerialException as inst:
-    #         # self.State = 0
-    #         # raise inst
-    #     elif (self.Type == "FILE"):
-    #         logging.debug("Nothing to do.. not a serial port...")
-    #         pass
-
-    # def open_trace(self, tracefile):
-    #     """ Open tracefile for reading."""
-    #
-    #     if (self.Type == "SERIAL"):
-    #         logging.debug("Nothing to do.. not a tracefile...")
-    #         pass
-    #     elif (self.Type == "FILE"):
-    #
-    #         if self.State != 0:
-    #             raise self.ErrorAlreadyConnected("Can't connect, already connected.")
-    #         else:
-    #             self.tf = open(tracefile, 'rb')
-    #             self.State = 1
-    #             self.recwaiting = 1
-
-    # TODO - maybe ... - combine above 2 functions, pass serial port/tracefile and (optional) settings dict to connect
-
-    # def disconnect(self):
-    #     """ Resets reader device and closes serial connection. """
-    #     if (self.Port != None):
-    #         if self.State == 1:
-    #             self.reset()
-    #             self.Port.close()
-    #         else:
-    #             logging.debug("Can't disconnect, reader not connected")
-    #             raise self.ErrorNotConnected("Can't disconnect")
-    #
-    #     self.clear_attr()
-    #     self.State = 0
-
-    # def close_trace(self):
-    #     """ Close tracefile when done."""
-    #     if self.State == 1:
-    #         self.tf.close()
-    #         self.State = 0
-    #     else:
-    #         logging.debug("Tracefile not open...")
-
-    # TODO - combine above 2 functions
-
-    # def record_trace(self):
-    #     """Init an output trace file and record all serial IO to it for later decoding"""
-    #
-    #     tfname = str(int(time.time())) + ".obd2_reader.trace"
-    #     self.tf_out = open(tfname, 'a')
-    #     self.RecordTrace = 1
-    #     logging.debug("Recoding trace to:", tfname)
+        return
 
     def OBD2_cmd(self, cmd):
         """Send an OBD2 PID to the vehicle, get the result, and format it into a standard record"""
@@ -656,29 +561,29 @@ class Elm327:
     #
 
     # fixme - consider SERIAL vs. FILE
-    def clear_attr(self):
-        """ Clears data attributes"""
-        # data attributes that should get filled in when reader is working
-        self.attr = {}
-        # for i in self.suppt_attr.keys():
-        for k in self.attr_cmds.keys():
-            self.attr[self.attr_cmds[k]] = "Unknown"
+    # def clear_attr(self):
+    #     """ Clears data attributes"""
+    #     # data attributes that should get filled in when reader is working
+    #     self.attr = {}
+    #     # for i in self.suppt_attr.keys():
+    #     for k in self.attr_cmds.keys():
+    #         self.attr[self.attr_cmds[k]] = "Unknown"
 
     # fixme - consider SERIAL vs. FILE
-    def rtrv_attr(self):
-        """ Retrieves data attributes"""
-        #
-        if self.debug > 1:
-            logging.debug("Retrieving reader attributes...")
-        #
-        if self.State != 1:
-            logging.debug("Can't retrieve reader attributes, reader not connected")
-            raise self.ErrorNotConnected("Can't retrieve reader attributes")
-        else:
-            if self.Device == "ELM327":
-                self.ELM327_rtrv_attr()
-            else:
-                raise self.ErrorReaderNotRecognized("Unknown OBD2 Reader device")
+    # def rtrv_attr(self):
+    #     """ Retrieves data attributes"""
+    #     #
+    #     if self.debug > 1:
+    #         logging.debug("Retrieving reader attributes...")
+    #     #
+    #     if self.State != 1:
+    #         logging.debug("Can't retrieve reader attributes, reader not connected")
+    #         raise self.ErrorNotConnected("Can't retrieve reader attributes")
+    #     else:
+    #         if self.Device == "ELM327":
+    #             self.ELM327_rtrv_attr()
+    #         else:
+    #             raise self.ErrorReaderNotRecognized("Unknown OBD2 Reader device")
 
     # # fixme - consider SERIAL vs. FILE
     # def reset(self):
@@ -720,10 +625,6 @@ class Elm327:
 
     #
     # Plain serial functions (private)
-    #
-
-    # fixme - consider SERIAL vs. FILE
-
     #
     #  ELM327 specific functions (private)
     #
@@ -808,12 +709,11 @@ class Elm327:
     def serial_rtrv_record(self):
         """Private method for retrieving single-line result of a last command
         from a serial-connected reader device."""
-        # Assumes records are separated by EOL.
-        # max seconds to wait for data
-        max_wait = 1
+        # Assumes records are separated by CR.
+        # BLOCKS
         raw_record = []
         #  raw_record is a list of non-empty strings:
-        line = self.Port.readline(timeout=max_wait)
+        line = self.Port.readline(timeout=None)
         raw_record.append(line)
         return raw_record
 
@@ -925,72 +825,107 @@ class Elm327:
                 self.recwaiting = 0
                 return []
 
+    # def SERIAL_RTRV_record(self, num_packets):
+    #     """Private method for retrieving the last command and its result from a serial-connected reader device."""
+    #     # Assumes records are separated by a '>' prompt.
+    #     # max seconds to wait for data
+    #     max_wait = 3
+    #     # seconds to wait before trying again
+    #     try_wait = 0.005
+    #     tries = max_wait / try_wait
+    #     # how much we have waited so far
+    #     waited = 0
+    #     # RECV
+    #     raw_record = []
+    #     #  raw_record is a list of non-empty strings,
+    #     #  each string is a line of info from the reader
+    #     word = ''
+    #     linebuf = []
+    #     while len(raw_record) < num_packets:
+    #         # we need to have something to reply..
+    #         # print "chars waiting:", self.Port.inWaiting()
+    #         # sys.stdout.flush()
+    #         # while self.Port.inWaiting() > 0:
+    #         while self.Port.in_waiting > 0:
+    #             while 1:
+    #                 # read 1 char at a time
+    #                 #   until we get to the '>' prompt
+    #                 #
+    #                 c = self.Port.read(1)
+    #                 # we are done once we see the prompt
+    #                 if c == b'>' or len(raw_record) == num_packets:
+    #                     # if self.debug > 2:
+    #                     #     print("Raw Record: ", pprint.pprint(raw_record))
+    #                     logging.debug("Read " + repr(raw_record))
+    #                     return raw_record
+    #                 # \r = CR , \n = LF
+    #                 #  (serial device uses CR + optionally LF, unix text only uses LF)
+    #                 # new array entry but only if there is something to add
+    #                 elif c == b'\r' or c == b'\n':
+    #                     if word != '':
+    #                         linebuf.append(word)
+    #                         word = ''
+    #                     if linebuf != []:
+    #                         raw_record.append(linebuf)
+    #                         linebuf = []
+    #                 # split line into words
+    #                 elif c == b' ':
+    #                     if word != '':
+    #                         linebuf.append(word)
+    #                         word = ''
+    #                 # all other chars
+    #                 else:
+    #                     # word = word + str(c)
+    #                     word = word + c.decode('utf-8')
+    #
+    #         # wait a bit for the serial line to respond
+    #         # if self.debug > 1:
+    #         #     logging.debug("NO DATA TO READ!!")
+    #         if waited < max_wait:
+    #             waited += try_wait
+    #             time.sleep(try_wait)
+    #         else:
+    #             self.recwaiting = 0
+    #             return []
+
     def SERIAL_RTRV_record(self, num_packets):
         """Private method for retrieving the last command and its result from a serial-connected reader device."""
         # Assumes records are separated by a '>' prompt.
-        # max seconds to wait for data
-        max_wait = 3
-        # seconds to wait before trying again
-        try_wait = 0.005
-        tries = max_wait / try_wait
-        # how much we have waited so far
-        waited = 0
-        # RECV
+        # List of records:
         raw_record = []
         #  raw_record is a list of non-empty strings,
         #  each string is a line of info from the reader
         word = ''
         linebuf = []
         while len(raw_record) < num_packets:
-            # we need to have something to reply..
-            # print "chars waiting:", self.Port.inWaiting()
-            # sys.stdout.flush()
-            # while self.Port.inWaiting() > 0:
-            while self.Port.in_waiting > 0:
-                while 1:
-                    # read 1 char at a time
-                    #   until we get to the '>' prompt
-                    #
-                    c = self.Port.read(1)
-                    # we are done once we see the prompt
-                    if c == b'>' or len(raw_record) == num_packets:
-                        # if self.debug > 2:
-                        #     print("Raw Record: ", pprint.pprint(raw_record))
-                        logging.debug("Read " + repr(raw_record))
-                        return raw_record
-                    # \r = CR , \n = LF
-                    #  (serial device uses CR + optionally LF, unix text only uses LF)
-                    # new array entry but only if there is something to add
-                    elif c == b'\r' or c == b'\n':
-                        if word != '':
-                            linebuf.append(word)
-                            word = ''
-                        if linebuf != []:
-                            raw_record.append(linebuf)
-                            linebuf = []
-                    # split line into words
-                    elif c == b' ':
-                        if word != '':
-                            linebuf.append(word)
-                            word = ''
-                    # all other chars
-                    else:
-                        # word = word + str(c)
-                        word = word + c.decode('utf-8')
-
-            # wait a bit for the serial line to respond
-            # if self.debug > 1:
-            #     logging.debug("NO DATA TO READ!!")
-            if waited < max_wait:
-                waited += try_wait
-                time.sleep(try_wait)
+            # read one char at a time in a blocking fashion:
+            # maybe need to set the timeout in serial port init part
+            c = self.Port.read(1, timeout=None)
+            if c == b'>' or len(raw_record) == num_packets:
+                logging.debug("Read " + repr(raw_record))
+                return raw_record
+            # \r = CR , \n = LF
+            #  (serial device uses CR + optionally LF, unix text only uses LF)
+            # new array entry but only if there is something to add
+            elif c == b'\r' or c == b'\n':
+                if word != '':
+                    linebuf.append(word)
+                    word = ''
+                if linebuf:
+                    raw_record.append(linebuf)
+                    linebuf = []
+            # split line into words
+            elif c == b' ':
+                if word != '':
+                    linebuf.append(word)
+                    word = ''
+            # all other chars
             else:
-                self.recwaiting = 0
-                return []
+                word = ''.join([word, c.decode('utf-8')])
 
     #
     # Exceptions
-
+    #
     class ErrorPortNotWriteable(Exception):
         def __init__(self, value):
             self.value = value
@@ -1039,22 +974,3 @@ class Elm327:
 
         def __str__(self):
             return repr(self.value)
-
-#    list_supported_features, (should be like the basic info)
-#    just look at the attr or suppt_attr dicts
-
-
-# Other ideas
-#
-#  ELM327 can work at higher speeds by fiddling with the Baudrate divisor
-#    new speed persists once set and survives resets
-#    setting involves testing and saving
-#  highspeed mode could update more sensors, more quickly, etc.
-#    not too much use for simple diagnostics
-#
-#    standard_speed,  (38400 or 9600)
-#    high_speed_1m,  (1Mbit??)
-#    high_speed_2m,  (2Mbit??)
-
-# low power mode
-
