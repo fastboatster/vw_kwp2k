@@ -37,7 +37,7 @@ import serial  #  imports pyserial
 import string  # split
 import time  # pause
 import sys  # write to stderr
-import logging  # for logging
+import logging  # for self.logger
 
 import pprint  # debug
 
@@ -48,24 +48,49 @@ class Elm327:
     init_commands = [
                     # 'atz',  # reset
                     b'ath1',  # headers on
-                    # b'atl0',  # no line breaks, but might to keep them on
-                    b'atl1',  # lets have line breaks on
-                    b'ate0',  # turn off echo
+                    b'atl0',  # no line breaks, but might to keep them on
+                    # b'atl1',  # lets have line breaks on
+                    b'ate1',  # turn on echo
                     b'ats1',  # spaces on, maybe need off
                     b'atpbc001',
                     b'atd1',  # display dlc - number of bytes in a message
                     b'atspb',
+                    b'atal',
+                    # b'atr1',
+                    # b'atat0',
+                    # b'atstff',
                     b'atcm000',
+                     b'atv1',
                     b'atcf000',
+                    b'atcfc0',
                     b'atcaf0'
                      ]
+    # init_commands = [
+    #     # 'atz',  # reset
+    #     b'atd',  # headers on
+    #     # b'atl0',  # no line breaks, but might to keep them on
+    #     # b'atl1',  # lets have line breaks on
+    #     b'ate0',  # turn off echo
+    #     b'ats1',  # spaces on, maybe need off
+    #     # b'atpbc001',
+    #     b'atd1',  # display dlc - number of bytes in a message
+    #     b'atsp6',
+    #     b'atal',
+    #     b'atr1',
+    #     b'atat0',
+    #     b'atstff',
+    #     # b'atcm000',
+    #     b'atcfc0',
+    #     b'atcaf0',
+    #     b'atv1'
+    # ]
 
-    def __init__(self, port):
+    def __init__(self, port, logger):
         """Initializes port by resetting device and getting supported PIDs. """
         #
         # serial port device is connected to
         self.Port = port
-        # self.logger = logger
+        self.logger = logger
         #
         self.debug = 255  # debug level, 0 = off, higher is more...
         #
@@ -140,7 +165,7 @@ class Elm327:
         for cmd in self.init_commands:
             self.SEND_cmd(cmd)
             record = self.RTRV_record()
-            logging.debug("Command: " + repr(cmd) + " Result: " + repr(record))
+            self.logger.debug("Command: " + repr(cmd) + " Result: " + repr(record))
         return
 
     def OBD2_cmd(self, cmd):
@@ -152,8 +177,8 @@ class Elm327:
 
         # # check that the ELM headers match the original cmd
         # if record[0][0] != cmd:
-        #     logging.debug("PANIC! - cmd is different")
-        #     logging.debug("cmd:", cmd, "record[0][0]:", record[0][0])
+        #     self.logger.debug("PANIC! - cmd is different")
+        #     self.logger.debug("cmd:", cmd, "record[0][0]:", record[0][0])
 
         # Format result into a standard OBD2 record
         obd2_record = self.triage_record(record)
@@ -245,7 +270,7 @@ class Elm327:
         while rec < rl:
             if record[rec][0] == 'BUFFER' and record[rec][1] == 'FULL':
                 record.pop(rec)
-                logging.debug(" ERROR - BUFFER FULL - Increase speed of serial connection"
+                self.logger.debug(" ERROR - BUFFER FULL - Increase speed of serial connection"
 )                # return []
             rec += 1
         # "BUS BUSY", "CAN ERROR", ???
@@ -261,24 +286,24 @@ class Elm327:
             mode = record[1][1]
             err = record[1][2]
             if err == 10:
-                logging.debug("General Error -- Mode:", mode)
+                self.logger.debug("General Error -- Mode:", mode)
             elif err == 11:
-                logging.debug("Service Not Supported Error -- Mode:", mode)
+                self.logger.debug("Service Not Supported Error -- Mode:", mode)
             elif err == 12:
-                logging.debug("Subfunction Not Supported or Invalid Format Error -- Mode:", mode)
+                self.logger.debug("Subfunction Not Supported or Invalid Format Error -- Mode:", mode)
             elif err == 21:
-                logging.debug("BUSY, Repeat -- Mode:", mode)
+                self.logger.debug("BUSY, Repeat -- Mode:", mode)
             elif err == 22:
-                logging.debug("Conditions or Sequence Not Correct -- Mode:", mode)
+                self.logger.debug("Conditions or Sequence Not Correct -- Mode:", mode)
             elif err == 78:
-                logging.debug("Unknown Error -- Mode:", mode, " -- Error code:", err)
+                self.logger.debug("Unknown Error -- Mode:", mode, " -- Error code:", err)
             return []
 
         # format an OBD 2 command for further processing at a higher layer
         try:
             obd2_record = self.format_obd2_record(record)
         except self.ErrorIncompleteRecord:
-            logging.debug("Garbage record.  Skipping.")
+            self.logger.debug("Garbage record.  Skipping.")
             return []
 
         return obd2_record
@@ -306,13 +331,13 @@ class Elm327:
                 #   FYI - 'A' is a valid protocol number so we can't just remove a leading A
                 pnum = int(resp[-1], 16)
                 if self.debug > 0:
-                    logging.debug("PNUM:", pnum,)
+                    self.logger.debug("PNUM:", pnum,)
                 if pnum >= 6:
                     self.Style = 'can'
                 else:
                     self.Style = 'old'
                 if self.debug > 0:
-                    logging.debug("Style:", self.Style)
+                    self.logger.debug("Style:", self.Style)
 
             elif cmd == 'ATZ':
                 # this is confusing,
@@ -322,17 +347,17 @@ class Elm327:
                 # not there yet...
                 # self.Headers = 0
                 if self.debug > 0:
-                    logging.debug("AT: Reset reader")
+                    self.logger.debug("AT: Reset reader")
 
             elif cmd == 'ATH0' and record[1][0] == 'OK':
                 self.Headers = 0
                 if self.debug > 0:
-                    logging.debug("AT: Headers OFF")
+                    self.logger.debug("AT: Headers OFF")
 
             elif cmd == 'ATH1' and record[1][0] == 'OK':
                 self.Headers = 1
                 if self.debug > 0:
-                    logging.debug("AT: Headers ON")
+                    self.logger.debug("AT: Headers ON")
 
         return
 
@@ -368,7 +393,7 @@ class Elm327:
         # old/headers,
         # old/no headers
         if self.debug > 1:
-            logging.debug("Style:", self.Style, " - Headers:", self.Headers, " - single/multiline  ??")
+            self.logger.debug("Style:", self.Style, " - Headers:", self.Headers, " - single/multiline  ??")
 
         if self.Style == 'can':
             if self.Headers == 1:
@@ -383,14 +408,14 @@ class Elm327:
                 lines = sorted(record[1:])
                 # this is effective for up to 16 lines per ECU ID, past that the sort will be silly
                 if self.debug > 1:
-                    logging.debug("CAN w/H, lines:")
+                    self.logger.debug("CAN w/H, lines:")
                     pprint.pprint(lines)
 
                 linenum = 1
                 # first element of each line is the ECU ID
                 for line in lines:
                     if linenum > 16:
-                        logging.debug("Oops.  Too many CAN Frames in this message.")
+                        self.logger.debug("Oops.  Too many CAN Frames in this message.")
                         break
                     linenum += 1
                     ecu = line[0]
@@ -488,13 +513,13 @@ class Elm327:
                 # TODO - pick out different sender ecus
 
                 ecu = lines[0][2]
-                logging.debug("ECU:", ecu)
+                self.logger.debug("ECU:", ecu)
                 ecuids[ecu] = {}
                 ecuids[ecu]['count'] = 0
                 ecuids[ecu]['data'] = []
 
                 if len(lines) > 1:
-                    logging.debug("OLD style, with Headers, Multiline")
+                    self.logger.debug("OLD style, with Headers, Multiline")
                     # 0: pri, 1: rcvr, 2: sndr, 3: mode, 4: pid, 5: linenum, 6->(n-1): data, lastbyte: checksum
                     # add mode & pid once, skip linenums, concat data
                     ecuids[ecu]['data'] = lines[0][3:5]
@@ -503,7 +528,7 @@ class Elm327:
                     # print "data:",
                     # pprint.pprint(ecuids[ecu]['data'])
                 elif len(lines) == 1:
-                    logging.debug("OLD style, with Headers, Singleline")
+                    self.logger.debug("OLD style, with Headers, Singleline")
                     # some pids (mode 09) will have a message count in byte 5
                     #  needs to be filtered later
                     # 0: pri, 1: rcvr, 2: sndr, 3: mode, 4: pid, 5-(n-1): data, lastbyte: checksum
@@ -517,7 +542,7 @@ class Elm327:
                     raise self.ErrorIncompleteRecord("ERROR - Incomplete Response Record")
 
             elif self.Headers == 0:
-                logging.debug("Headers OFF")
+                self.logger.debug("Headers OFF")
                 # print "cmd:", cmd
                 # pprint.pprint(record)
 
@@ -574,10 +599,10 @@ class Elm327:
     #     """ Retrieves data attributes"""
     #     #
     #     if self.debug > 1:
-    #         logging.debug("Retrieving reader attributes...")
+    #         self.logger.debug("Retrieving reader attributes...")
     #     #
     #     if self.State != 1:
-    #         logging.debug("Can't retrieve reader attributes, reader not connected")
+    #         self.logger.debug("Can't retrieve reader attributes, reader not connected")
     #         raise self.ErrorNotConnected("Can't retrieve reader attributes")
     #     else:
     #         if self.Device == "ELM327":
@@ -590,10 +615,10 @@ class Elm327:
     #     """ Resets device"""
     #     #
     #     if self.debug > 1:
-    #         logging.debug("Sending reset command...")
+    #         self.logger.debug("Sending reset command...")
     #     #
     #     if self.State != 1:
-    #         logging.debug("Can't reset reader, reader not connected")
+    #         self.logger.debug("Can't reset reader, reader not connected")
     #         raise self.ErrorNotConnected("Can't reset reader")
     #     else:
     #         if self.Device == "ELM327":
@@ -603,19 +628,20 @@ class Elm327:
 
     def reset(self):
         """ Resets device"""
-        self.SEND_cmd(b'atz')  # reset ELM327 firmware
+        # self.SEND_cmd(b'atz')
+        self.SEND_cmd(b'atd') # reset ELM327 firmware
         self.RTRV_record()
-        logging.debug('Performed reset')
+        self.logger.debug('Performed reset')
 
 
     # def reset_protocol(self):
     #     """ Resets device communication protocol"""
     #     #
     #     if self.debug > 1:
-    #         logging.debug("Resetting communication protocol...")
+    #         self.logger.debug("Resetting communication protocol...")
     #     #
     #     if self.State != 1:
-    #         logging.debug("Can't reset protocol, reader not connected")
+    #         self.logger.debug("Can't reset protocol, reader not connected")
     #         raise self.ErrorNotConnected("Can't reset reader")
     #     else:
     #         if self.Device == "ELM327":
@@ -668,7 +694,7 @@ class Elm327:
 
     def SERIAL_FLUSH_buffers(self):
         """Internal use only: not a public interface"""
-        logging.debug("Trying to flush the recv buffer... (~2 sec wait)")
+        self.logger.debug("Trying to flush the recv buffer... (~2 sec wait)")
         #
         # wait 2 secs for something to appear in the buffer
         time.sleep(2)
@@ -678,18 +704,33 @@ class Elm327:
 
     def SERIAL_SEND_cmd(self, cmd):
         """Private method for sending any CMD to a serial port"""
-        # SEND
+        # BLOCKS
         if self.Port.writable():
-            self.Port.write(cmd)
-            # TODO need to do something about this, why not send everything at once?
-            # for c in cmd:
-            #     self.Port.write(c)
-            self.Port.write(b'\r')
             self.Port.flushInput()
-            logging.debug("Wrote " + repr(cmd))
+            self.Port.write(cmd)
+            self.Port.write(b'\r')
+            # self.Port.write(b'\r', timeout=None)
+            self.Port.flush()
+            # self.Port.flushOutput()
+            self.logger.debug("Wrote " + repr(cmd))
         else:
             raise self.ErrorPortNotWriteable("Couldn't write to serial port")
         return
+
+    # def SERIAL_SEND_cmd(self, cmd):
+    #     """Private method for sending any CMD to a serial port"""
+    #     # SEND
+    #     if self.Port.writable():
+    #         self.Port.write(cmd)
+    #         # TODO need to do something about this, why not send everything at once?
+    #         # for c in cmd:
+    #         #     self.Port.write(c)
+    #         self.Port.write(b'\r')
+    #         self.Port.flushInput()
+    #         self.logger.debug("Wrote " + repr(cmd))
+    #     else:
+    #         raise self.ErrorPortNotWriteable("Couldn't write to serial port")
+    #     return
 
     def serial_send_cmd(self, cmd):
         """Private method for sending any CMD to a serial port"""
@@ -701,7 +742,7 @@ class Elm327:
             while self.Port.out_waiting > 0:
                 time.sleep(0.005)
             # self.Port.write("\r\n")
-            logging.debug("Wrote " + repr(cmd))
+            self.logger.debug("Wrote " + repr(cmd))
         else:
             raise self.ErrorPortNotWriteable("Couldn't write to serial port")
         return
@@ -732,7 +773,7 @@ class Elm327:
         #             if c == '>':
         #                 # if self.debug > 2:
         #                 #     print("Raw Record: ", pprint.pprint(raw_record))
-        #                 logging.debug("Read " + repr(raw_record))
+        #                 self.logger.debug("Read " + repr(raw_record))
         #                 return raw_record
         #             # \r = CR , \n = LF
         #             #  (serial device uses CR + optionally LF, unix text only uses LF)
@@ -755,7 +796,7 @@ class Elm327:
         #
         #     # wait a bit for the serial line to respond
         #     # if self.debug > 1:
-        #     #     logging.debug("NO DATA TO READ!!")
+        #     #     self.logger.debug("NO DATA TO READ!!")
         #     if waited < max_wait:
         #         waited += try_wait
         #         time.sleep(try_wait)
@@ -794,7 +835,7 @@ class Elm327:
                     if c == '>':
                         # if self.debug > 2:
                         #     print("Raw Record: ", pprint.pprint(raw_record))
-                        logging.debug("Read " + repr(raw_record))
+                        self.logger.debug("Read " + repr(raw_record))
                         return raw_record
                     # \r = CR , \n = LF
                     #  (serial device uses CR + optionally LF, unix text only uses LF)
@@ -817,7 +858,7 @@ class Elm327:
 
             # wait a bit for the serial line to respond
             # if self.debug > 1:
-            #     logging.debug("NO DATA TO READ!!")
+            #     self.logger.debug("NO DATA TO READ!!")
             if waited < max_wait:
                 waited += try_wait
                 time.sleep(try_wait)
@@ -856,7 +897,7 @@ class Elm327:
     #                 if c == b'>' or len(raw_record) == num_packets:
     #                     # if self.debug > 2:
     #                     #     print("Raw Record: ", pprint.pprint(raw_record))
-    #                     logging.debug("Read " + repr(raw_record))
+    #                     self.logger.debug("Read " + repr(raw_record))
     #                     return raw_record
     #                 # \r = CR , \n = LF
     #                 #  (serial device uses CR + optionally LF, unix text only uses LF)
@@ -880,7 +921,7 @@ class Elm327:
     #
     #         # wait a bit for the serial line to respond
     #         # if self.debug > 1:
-    #         #     logging.debug("NO DATA TO READ!!")
+    #         #     self.logger.debug("NO DATA TO READ!!")
     #         if waited < max_wait:
     #             waited += try_wait
     #             time.sleep(try_wait)
@@ -899,14 +940,18 @@ class Elm327:
         linebuf = []
         while len(raw_record) < num_packets:
             # read one char at a time in a blocking fashion:
-            # maybe need to set the timeout in serial port init part
-            c = self.Port.read(1, timeout=None)
-            if c == b'>' or len(raw_record) == num_packets:
-                logging.debug("Read " + repr(raw_record))
+            c = self.Port.read(1)
+            # return everything we have read so far if we see 'b' not preceded by 'STOPPED'
+            # or if we have read the desired number of messages:
+            if ((c == b'>' and len(raw_record) > 0 and 'STOPPED' not in raw_record[-1]) \
+                    and (c == b'>' and len(raw_record) > 0 and '?' not in raw_record[-1])) \
+                    or len(raw_record) == num_packets:
+                self.logger.debug("Read " + repr(raw_record))
                 return raw_record
             # \r = CR , \n = LF
             #  (serial device uses CR + optionally LF, unix text only uses LF)
             # new array entry but only if there is something to add
+            # elif 'STOPPED' not in word and (c == b'\r' or c == b'\n'):
             elif c == b'\r' or c == b'\n':
                 if word != '':
                     linebuf.append(word)
@@ -922,6 +967,9 @@ class Elm327:
             # all other chars
             else:
                 word = ''.join([word, c.decode('utf-8')])
+        # if we now have num_packets records, return them
+        self.logger.debug("Read " + repr(raw_record))
+        return raw_record
 
     #
     # Exceptions
