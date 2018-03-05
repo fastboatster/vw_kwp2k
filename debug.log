@@ -1,0 +1,504 @@
+2018-01-05 18:47:57,130 - 1773 - __main__ - DEBUG - Logger initialized
+2018-01-05 18:48:00,430 - 5074 - __main__ - DEBUG - Trying to flush the recv buffer... (~2 sec wait)
+2018-01-05 18:48:02,549 - 7192 - __main__ - DEBUG - Wrote b'atd'
+2018-01-05 18:48:02,556 - 7200 - __main__ - DEBUG - Read [['atd'], ['OK']]
+2018-01-05 18:48:02,556 - 7200 - __main__ - DEBUG - Performed reset
+2018-01-05 18:48:03,574 - 8217 - __main__ - DEBUG - Wrote b'ath1'
+2018-01-05 18:48:03,576 - 8219 - __main__ - DEBUG - Read [['ath1'], ['OK']]
+2018-01-05 18:48:03,576 - 8219 - __main__ - DEBUG - Command: b'ath1' Result: [['ath1'], ['OK']]
+2018-01-05 18:48:03,588 - 8232 - __main__ - DEBUG - Wrote b'atl0'
+2018-01-05 18:48:03,597 - 8241 - __main__ - DEBUG - Read [['atl0'], ['OK']]
+2018-01-05 18:48:03,597 - 8241 - __main__ - DEBUG - Command: b'atl0' Result: [['atl0'], ['OK']]
+2018-01-05 18:48:03,604 - 8248 - __main__ - DEBUG - Wrote b'ate1'
+2018-01-05 18:48:03,612 - 8256 - __main__ - DEBUG - Read [['ate1'], ['OK']]
+2018-01-05 18:48:03,612 - 8256 - __main__ - DEBUG - Command: b'ate1' Result: [['ate1'], ['OK']]
+2018-01-05 18:48:03,617 - 8261 - __main__ - DEBUG - Wrote b'ats1'
+2018-01-05 18:48:03,621 - 8264 - __main__ - DEBUG - Read [['ats1'], ['OK']]
+2018-01-05 18:48:03,621 - 8264 - __main__ - DEBUG - Command: b'ats1' Result: [['ats1'], ['OK']]
+2018-01-05 18:48:03,630 - 8274 - __main__ - DEBUG - Wrote b'atpbc001'
+2018-01-05 18:48:03,632 - 8276 - __main__ - DEBUG - Read [['atpbc001'], ['OK']]
+2018-01-05 18:48:03,632 - 8276 - __main__ - DEBUG - Command: b'atpbc001' Result: [['atpbc001'], ['OK']]
+2018-01-05 18:48:03,644 - 8288 - __main__ - DEBUG - Wrote b'atd1'
+2018-01-05 18:48:03,651 - 8294 - __main__ - DEBUG - Read [['atd1'], ['OK']]
+2018-01-05 18:48:03,651 - 8294 - __main__ - DEBUG - Command: b'atd1' Result: [['atd1'], ['OK']]
+2018-01-05 18:48:03,658 - 8301 - __main__ - DEBUG - Wrote b'atspb'
+2018-01-05 18:48:03,665 - 8309 - __main__ - DEBUG - Read [['atspb'], ['OK']]
+2018-01-05 18:48:03,665 - 8309 - __main__ - DEBUG - Command: b'atspb' Result: [['atspb'], ['OK']]
+2018-01-05 18:48:03,670 - 8314 - __main__ - DEBUG - Wrote b'atal'
+2018-01-05 18:48:03,681 - 8325 - __main__ - DEBUG - Read [['atal'], ['OK']]
+2018-01-05 18:48:03,681 - 8325 - __main__ - DEBUG - Command: b'atal' Result: [['atal'], ['OK']]
+2018-01-05 18:48:03,684 - 8327 - __main__ - DEBUG - Wrote b'atcm000'
+2018-01-05 18:48:03,695 - 8338 - __main__ - DEBUG - Read [['atcm000'], ['OK']]
+2018-01-05 18:48:03,695 - 8338 - __main__ - DEBUG - Command: b'atcm000' Result: [['atcm000'], ['OK']]
+2018-01-05 18:48:03,697 - 8340 - __main__ - DEBUG - Wrote b'atv1'
+2018-01-05 18:48:03,698 - 8341 - __main__ - DEBUG - Read [['atv1'], ['OK']]
+2018-01-05 18:48:03,698 - 8341 - __main__ - DEBUG - Command: b'atv1' Result: [['atv1'], ['OK']]
+2018-01-05 18:48:03,710 - 8354 - __main__ - DEBUG - Wrote b'atcf000'
+2018-01-05 18:48:03,712 - 8356 - __main__ - DEBUG - Read [['atcf000'], ['OK']]
+2018-01-05 18:48:03,712 - 8356 - __main__ - DEBUG - Command: b'atcf000' Result: [['atcf000'], ['OK']]
+2018-01-05 18:48:03,724 - 8368 - __main__ - DEBUG - Wrote b'atcfc0'
+2018-01-05 18:48:03,734 - 8377 - __main__ - DEBUG - Read [['atcfc0'], ['OK']]
+2018-01-05 18:48:03,734 - 8377 - __main__ - DEBUG - Command: b'atcfc0' Result: [['atcfc0'], ['OK']]
+2018-01-05 18:48:03,740 - 8383 - __main__ - DEBUG - Wrote b'atcaf0'
+2018-01-05 18:48:03,764 - 8408 - __main__ - DEBUG - Read [['atcaf0'], ['OK']]
+2018-01-05 18:48:03,764 - 8408 - __main__ - DEBUG - Command: b'atcaf0' Result: [['atcaf0'], ['OK']]
+2018-01-05 18:48:05,520 - 10164 - __main__ - DEBUG - Wrote b'atsh200'
+2018-01-05 18:48:05,532 - 10175 - __main__ - DEBUG - Read [['atsh200'], ['OK']]
+2018-01-05 18:48:05,536 - 10179 - __main__ - DEBUG - Wrote b'atcra201'
+2018-01-05 18:48:05,553 - 10196 - __main__ - DEBUG - Read [['atcra201'], ['OK']]
+2018-01-05 18:48:05,564 - 10208 - __main__ - DEBUG - Wrote b'01 c0 00 10 00 03 01 1'
+2018-01-05 18:48:05,588 - 10232 - __main__ - DEBUG - Read [['01', 'c0', '00', '10', '00', '03', '01', '1'], ['300', '1', 'A8']]
+2018-01-05 18:48:05,603 - 10246 - __main__ - DEBUG - Wrote b'atsh740'
+2018-01-05 18:48:05,605 - 10248 - __main__ - DEBUG - Read [['atsh740'], ['OK']]
+2018-01-05 18:48:05,618 - 10261 - __main__ - DEBUG - Wrote b'atcra300'
+2018-01-05 18:48:05,641 - 10284 - __main__ - DEBUG - Read [['atcra300'], ['OK']]
+2018-01-05 18:48:05,643 - 10287 - __main__ - DEBUG - Wrote b'a0 0f 8a ff 4a ff'
+2018-01-05 18:48:05,692 - 10336 - __main__ - DEBUG - Read [['a0', '0f', '8a', 'ff', '4a', 'ff'], ['300', '6', 'A1', '0F', '8A', 'FF', '4A', 'FF']]
+2018-01-05 18:48:05,753 - 10397 - __main__ - DEBUG - Wrote b' 30 00 02 10 89'
+2018-01-05 18:48:05,815 - 10459 - __main__ - DEBUG - Read [['STOPPED'], ['>30', '00', '02', '10', '89'], ['300', '5', '10', '00', '02', '50', '89']]
+2018-01-05 18:48:05,868 - 10511 - __main__ - DEBUG - Wrote b' b1'
+2018-01-05 18:48:05,873 - 10517 - __main__ - DEBUG - Read [['STOPPED']]
+2018-01-05 18:48:05,987 - 10631 - __main__ - DEBUG - Wrote b'11 00 02 21 01'
+2018-01-05 18:48:06,024 - 10668 - __main__ - DEBUG - Read [['STOPPED'], ['>1', '00', '02', '21', '01'], ['300', '1', 'B1']]
+2018-01-05 18:48:43,111 - 2066 - __main__ - DEBUG - Logger initialized
+2018-01-05 18:48:45,771 - 4726 - __main__ - DEBUG - Trying to flush the recv buffer... (~2 sec wait)
+2018-01-05 18:48:47,886 - 6841 - __main__ - DEBUG - Wrote b'atd'
+2018-01-05 18:48:47,896 - 6851 - __main__ - DEBUG - Read [['atd'], ['OK']]
+2018-01-05 18:48:47,896 - 6851 - __main__ - DEBUG - Performed reset
+2018-01-05 18:48:48,902 - 7857 - __main__ - DEBUG - Wrote b'ath1'
+2018-01-05 18:48:48,911 - 7866 - __main__ - DEBUG - Read [['ath1'], ['OK']]
+2018-01-05 18:48:48,911 - 7866 - __main__ - DEBUG - Command: b'ath1' Result: [['ath1'], ['OK']]
+2018-01-05 18:48:48,916 - 7871 - __main__ - DEBUG - Wrote b'atl0'
+2018-01-05 18:48:48,926 - 7881 - __main__ - DEBUG - Read [['atl0'], ['OK']]
+2018-01-05 18:48:48,926 - 7881 - __main__ - DEBUG - Command: b'atl0' Result: [['atl0'], ['OK']]
+2018-01-05 18:48:48,929 - 7884 - __main__ - DEBUG - Wrote b'ate1'
+2018-01-05 18:48:48,937 - 7892 - __main__ - DEBUG - Read [['ate1'], ['OK']]
+2018-01-05 18:48:48,942 - 7897 - __main__ - DEBUG - Command: b'ate1' Result: [['ate1'], ['OK']]
+2018-01-05 18:48:48,943 - 7898 - __main__ - DEBUG - Wrote b'ats1'
+2018-01-05 18:48:48,945 - 7900 - __main__ - DEBUG - Read [['ats1'], ['OK']]
+2018-01-05 18:48:48,945 - 7900 - __main__ - DEBUG - Command: b'ats1' Result: [['ats1'], ['OK']]
+2018-01-05 18:48:48,956 - 7911 - __main__ - DEBUG - Wrote b'atpbc001'
+2018-01-05 18:48:48,959 - 7914 - __main__ - DEBUG - Read [['atpbc001'], ['OK']]
+2018-01-05 18:48:48,959 - 7914 - __main__ - DEBUG - Command: b'atpbc001' Result: [['atpbc001'], ['OK']]
+2018-01-05 18:48:48,969 - 7924 - __main__ - DEBUG - Wrote b'atd1'
+2018-01-05 18:48:48,981 - 7936 - __main__ - DEBUG - Read [['atd1'], ['OK']]
+2018-01-05 18:48:48,982 - 7937 - __main__ - DEBUG - Command: b'atd1' Result: [['atd1'], ['OK']]
+2018-01-05 18:48:48,983 - 7938 - __main__ - DEBUG - Wrote b'atspb'
+2018-01-05 18:48:48,991 - 7946 - __main__ - DEBUG - Read [['atspb'], ['OK']]
+2018-01-05 18:48:48,995 - 7949 - __main__ - DEBUG - Command: b'atspb' Result: [['atspb'], ['OK']]
+2018-01-05 18:48:48,996 - 7951 - __main__ - DEBUG - Wrote b'atal'
+2018-01-05 18:48:49,007 - 7962 - __main__ - DEBUG - Read [['atal'], ['OK']]
+2018-01-05 18:48:49,008 - 7963 - __main__ - DEBUG - Command: b'atal' Result: [['atal'], ['OK']]
+2018-01-05 18:48:49,009 - 7964 - __main__ - DEBUG - Wrote b'atcm000'
+2018-01-05 18:48:49,021 - 7976 - __main__ - DEBUG - Read [['atcm000'], ['OK']]
+2018-01-05 18:48:49,021 - 7976 - __main__ - DEBUG - Command: b'atcm000' Result: [['atcm000'], ['OK']]
+2018-01-05 18:48:49,023 - 7978 - __main__ - DEBUG - Wrote b'atv1'
+2018-01-05 18:48:49,034 - 7989 - __main__ - DEBUG - Read [['atv1'], ['OK']]
+2018-01-05 18:48:49,034 - 7989 - __main__ - DEBUG - Command: b'atv1' Result: [['atv1'], ['OK']]
+2018-01-05 18:48:49,036 - 7991 - __main__ - DEBUG - Wrote b'atcf000'
+2018-01-05 18:48:49,053 - 8008 - __main__ - DEBUG - Read [['atcf000'], ['OK']]
+2018-01-05 18:48:49,054 - 8009 - __main__ - DEBUG - Command: b'atcf000' Result: [['atcf000'], ['OK']]
+2018-01-05 18:48:49,055 - 8010 - __main__ - DEBUG - Wrote b'atcfc0'
+2018-01-05 18:48:49,079 - 8034 - __main__ - DEBUG - Read [['atcfc0'], ['OK']]
+2018-01-05 18:48:49,080 - 8035 - __main__ - DEBUG - Command: b'atcfc0' Result: [['atcfc0'], ['OK']]
+2018-01-05 18:48:49,081 - 8036 - __main__ - DEBUG - Wrote b'atcaf0'
+2018-01-05 18:48:49,104 - 8059 - __main__ - DEBUG - Read [['atcaf0'], ['OK']]
+2018-01-05 18:48:49,104 - 8059 - __main__ - DEBUG - Command: b'atcaf0' Result: [['atcaf0'], ['OK']]
+2018-01-05 18:48:52,970 - 11925 - __main__ - DEBUG - Wrote b'atsh200'
+2018-01-05 18:48:52,980 - 11935 - __main__ - DEBUG - Read [['atsh200'], ['OK']]
+2018-01-05 18:48:52,984 - 11939 - __main__ - DEBUG - Wrote b'atcra201'
+2018-01-05 18:48:53,003 - 11958 - __main__ - DEBUG - Read [['atcra201'], ['OK']]
+2018-01-05 18:48:53,005 - 11960 - __main__ - DEBUG - Wrote b'01 c0 00 10 00 03 01 1'
+2018-01-05 18:48:53,040 - 11995 - __main__ - DEBUG - Read [['01', 'c0', '00', '10', '00', '03', '01', '1'], ['300', '1', 'A8']]
+2018-01-05 18:48:53,044 - 11999 - __main__ - DEBUG - Wrote b'atsh740'
+2018-01-05 18:48:53,060 - 12015 - __main__ - DEBUG - Read [['atsh740'], ['OK']]
+2018-01-05 18:48:53,062 - 12017 - __main__ - DEBUG - Wrote b'atcra300'
+2018-01-05 18:48:53,073 - 12028 - __main__ - DEBUG - Read [['atcra300'], ['OK']]
+2018-01-05 18:48:53,075 - 12030 - __main__ - DEBUG - Wrote b'a0 0f 8a ff 4a ff'
+2018-01-05 18:48:53,133 - 12088 - __main__ - DEBUG - Read [['a0', '0f', '8a', 'ff', '4a', 'ff'], ['300', '6', 'A1', '0F', '8A', 'FF', '4A', 'FF']]
+2018-01-05 18:48:53,194 - 12149 - __main__ - DEBUG - Wrote b' 30 00 02 10 89'
+2018-01-05 18:48:53,260 - 12215 - __main__ - DEBUG - Read [['STOPPED'], ['>30', '00', '02', '10', '89'], ['300', '5', '10', '00', '02', '50', '89']]
+2018-01-05 18:48:53,316 - 12271 - __main__ - DEBUG - Wrote b' b1'
+2018-01-05 18:48:53,330 - 12285 - __main__ - DEBUG - Read [['STOPPED']]
+2018-01-05 18:48:53,434 - 12389 - __main__ - DEBUG - Wrote b' 11 00 02 21 01'
+2018-01-05 18:48:53,628 - 12583 - __main__ - DEBUG - Read [['STOPPED'], ['>11', '00', '02', '21', '01'], ['300', '1', 'B2'], ['300', '8', '21', '00', '1A', '61', '01', '01', 'C8', '00'], ['300', '8', '22', '05', '0A', '77', '14', '32', '80', '10'], ['300', '8', '23', 'FF', 'B2', '25', '00', '00', '25', '00'], ['300', '8', '14', '00', '25', '00', '00', '25', '00', '00']]
+2018-01-08 18:22:00,504 - 1426 - __main__ - DEBUG - Logger initialized
+2018-01-08 18:22:15,826 - 16748 - __main__ - DEBUG - Trying to flush the recv buffer... (~2 sec wait)
+2018-01-08 18:22:17,859 - 18781 - __main__ - DEBUG - Wrote b'atd'
+2018-01-08 18:22:17,869 - 18791 - __main__ - DEBUG - Read [['atd'], ['OK']]
+2018-01-08 18:22:17,870 - 18792 - __main__ - DEBUG - Performed reset
+2018-01-08 18:22:18,902 - 19824 - __main__ - DEBUG - Wrote b'ath1'
+2018-01-08 18:22:18,913 - 19835 - __main__ - DEBUG - Read [['ath1'], ['OK']]
+2018-01-08 18:22:18,915 - 19837 - __main__ - DEBUG - Command: b'ath1' Result: [['ath1'], ['OK']]
+2018-01-08 18:22:18,952 - 19874 - __main__ - DEBUG - Wrote b'atl0'
+2018-01-08 18:22:18,963 - 19885 - __main__ - DEBUG - Read [['atl0'], ['OK']]
+2018-01-08 18:22:18,964 - 19886 - __main__ - DEBUG - Command: b'atl0' Result: [['atl0'], ['OK']]
+2018-01-08 18:22:18,993 - 19915 - __main__ - DEBUG - Wrote b'ate1'
+2018-01-08 18:22:19,002 - 19924 - __main__ - DEBUG - Read [['ate1'], ['OK']]
+2018-01-08 18:22:19,003 - 19925 - __main__ - DEBUG - Command: b'ate1' Result: [['ate1'], ['OK']]
+2018-01-08 18:22:19,008 - 19930 - __main__ - DEBUG - Wrote b'ats1'
+2018-01-08 18:22:19,043 - 19965 - __main__ - DEBUG - Read [['ats1'], ['OK']]
+2018-01-08 18:22:19,044 - 19966 - __main__ - DEBUG - Command: b'ats1' Result: [['ats1'], ['OK']]
+2018-01-08 18:22:19,069 - 19991 - __main__ - DEBUG - Wrote b'atpbc001'
+2018-01-08 18:22:19,101 - 20023 - __main__ - DEBUG - Read [['atpbc001'], ['OK']]
+2018-01-08 18:22:19,103 - 20025 - __main__ - DEBUG - Command: b'atpbc001' Result: [['atpbc001'], ['OK']]
+2018-01-08 18:22:19,108 - 20030 - __main__ - DEBUG - Wrote b'atd1'
+2018-01-08 18:22:19,142 - 20064 - __main__ - DEBUG - Read [['atd1'], ['OK']]
+2018-01-08 18:22:19,144 - 20066 - __main__ - DEBUG - Command: b'atd1' Result: [['atd1'], ['OK']]
+2018-01-08 18:22:19,172 - 20094 - __main__ - DEBUG - Wrote b'atspb'
+2018-01-08 18:22:19,182 - 20104 - __main__ - DEBUG - Read [['atspb'], ['OK']]
+2018-01-08 18:22:19,182 - 20105 - __main__ - DEBUG - Command: b'atspb' Result: [['atspb'], ['OK']]
+2018-01-08 18:22:19,187 - 20109 - __main__ - DEBUG - Wrote b'atal'
+2018-01-08 18:22:19,220 - 20142 - __main__ - DEBUG - Read [['atal'], ['OK']]
+2018-01-08 18:22:19,222 - 20144 - __main__ - DEBUG - Command: b'atal' Result: [['atal'], ['OK']]
+2018-01-08 18:22:19,227 - 20149 - __main__ - DEBUG - Wrote b'atcm000'
+2018-01-08 18:22:19,266 - 20188 - __main__ - DEBUG - Read [['atcm000'], ['OK']]
+2018-01-08 18:22:19,268 - 20190 - __main__ - DEBUG - Command: b'atcm000' Result: [['atcm000'], ['OK']]
+2018-01-08 18:22:19,272 - 20194 - __main__ - DEBUG - Wrote b'atv1'
+2018-01-08 18:22:19,305 - 20227 - __main__ - DEBUG - Read [['atv1'], ['OK']]
+2018-01-08 18:22:19,307 - 20229 - __main__ - DEBUG - Command: b'atv1' Result: [['atv1'], ['OK']]
+2018-01-08 18:22:19,312 - 20234 - __main__ - DEBUG - Wrote b'atcf000'
+2018-01-08 18:22:19,343 - 20265 - __main__ - DEBUG - Read [['atcf000'], ['OK']]
+2018-01-08 18:22:19,345 - 20267 - __main__ - DEBUG - Command: b'atcf000' Result: [['atcf000'], ['OK']]
+2018-01-08 18:22:19,399 - 20321 - __main__ - DEBUG - Wrote b'atcfc0'
+2018-01-08 18:22:19,431 - 20353 - __main__ - DEBUG - Read [['atcfc0'], ['OK']]
+2018-01-08 18:22:19,433 - 20355 - __main__ - DEBUG - Command: b'atcfc0' Result: [['atcfc0'], ['OK']]
+2018-01-08 18:22:19,438 - 20360 - __main__ - DEBUG - Wrote b'atcaf0'
+2018-01-08 18:22:19,473 - 20395 - __main__ - DEBUG - Read [['atcaf0'], ['OK']]
+2018-01-08 18:22:19,475 - 20397 - __main__ - DEBUG - Command: b'atcaf0' Result: [['atcaf0'], ['OK']]
+2018-01-08 18:22:19,479 - 20401 - __main__ - DEBUG - Wrote b'atsh200'
+2018-01-08 18:22:19,513 - 20435 - __main__ - DEBUG - Read [['atsh200'], ['OK']]
+2018-01-08 18:22:19,518 - 20440 - __main__ - DEBUG - Wrote b'atcra202'
+2018-01-08 18:22:19,551 - 20473 - __main__ - DEBUG - Read [['atcra202'], ['OK']]
+2018-01-08 18:22:19,582 - 20504 - __main__ - DEBUG - Wrote b'02 c0 00 10 00 03 01 1'
+2018-01-08 18:22:19,635 - 20557 - __main__ - DEBUG - Read [['02', 'c0', '00', '10', '00', '03', '01', '1'], ['202', '7', '00', 'D0', '00', '03', '60', '07', '01']]
+2018-01-08 18:22:19,669 - 20591 - __main__ - DEBUG - Wrote b'atsh768'
+2018-01-08 18:22:19,678 - 20600 - __main__ - DEBUG - Read [['atsh768'], ['OK']]
+2018-01-08 18:22:19,683 - 20605 - __main__ - DEBUG - Wrote b'atcra300'
+2018-01-08 18:22:19,716 - 20638 - __main__ - DEBUG - Read [['atcra300'], ['OK']]
+2018-01-08 18:22:19,722 - 20644 - __main__ - DEBUG - Wrote b'a0 0f 8a ff 4a ff'
+2018-01-08 18:22:19,982 - 20904 - __main__ - DEBUG - Read [['a0', '0f', '8a', 'ff', '4a', 'ff'], ['NO', 'DATA']]
+2018-01-08 18:22:19,988 - 20910 - __main__ - DEBUG - Wrote b' 30 00 02 10 89'
+2018-01-08 18:22:20,210 - 21132 - __main__ - DEBUG - Read [['30', '00', '02', '10', '89'], ['NO', 'DATA']]
+2018-01-08 18:22:20,217 - 21139 - __main__ - DEBUG - Wrote b' b1'
+2018-01-08 18:22:20,249 - 21171 - __main__ - DEBUG - Read [['b1']]
+2018-01-08 18:22:20,256 - 21178 - __main__ - DEBUG - Wrote b' 11 00 02 21 06'
+2018-01-08 18:22:20,493 - 21415 - __main__ - DEBUG - Read [['STOPPED'], ['>11', '00', '02', '21', '06'], ['NO', 'DATA']]
+2018-01-08 18:23:03,590 - 1179 - __main__ - DEBUG - Logger initialized
+2018-01-08 18:23:06,977 - 4566 - __main__ - DEBUG - Trying to flush the recv buffer... (~2 sec wait)
+2018-01-08 18:23:09,005 - 6594 - __main__ - DEBUG - Wrote b'atd'
+2018-01-08 18:23:09,041 - 6629 - __main__ - DEBUG - Read [['atd'], ['OK']]
+2018-01-08 18:23:09,042 - 6630 - __main__ - DEBUG - Performed reset
+2018-01-08 18:23:10,050 - 7638 - __main__ - DEBUG - Wrote b'ath1'
+2018-01-08 18:23:10,060 - 7648 - __main__ - DEBUG - Read [['ath1'], ['OK']]
+2018-01-08 18:23:10,060 - 7648 - __main__ - DEBUG - Command: b'ath1' Result: [['ath1'], ['OK']]
+2018-01-08 18:23:10,064 - 7652 - __main__ - DEBUG - Wrote b'atl0'
+2018-01-08 18:23:10,097 - 7686 - __main__ - DEBUG - Read [['atl0'], ['OK']]
+2018-01-08 18:23:10,098 - 7686 - __main__ - DEBUG - Command: b'atl0' Result: [['atl0'], ['OK']]
+2018-01-08 18:23:10,101 - 7690 - __main__ - DEBUG - Wrote b'ate1'
+2018-01-08 18:23:10,134 - 7722 - __main__ - DEBUG - Read [['ate1'], ['OK']]
+2018-01-08 18:23:10,134 - 7722 - __main__ - DEBUG - Command: b'ate1' Result: [['ate1'], ['OK']]
+2018-01-08 18:23:10,138 - 7726 - __main__ - DEBUG - Wrote b'ats1'
+2018-01-08 18:23:10,169 - 7757 - __main__ - DEBUG - Read [['ats1'], ['OK']]
+2018-01-08 18:23:10,169 - 7757 - __main__ - DEBUG - Command: b'ats1' Result: [['ats1'], ['OK']]
+2018-01-08 18:23:10,173 - 7762 - __main__ - DEBUG - Wrote b'atpbc001'
+2018-01-08 18:23:10,208 - 7796 - __main__ - DEBUG - Read [['atpbc001'], ['OK']]
+2018-01-08 18:23:10,208 - 7796 - __main__ - DEBUG - Command: b'atpbc001' Result: [['atpbc001'], ['OK']]
+2018-01-08 18:23:10,211 - 7800 - __main__ - DEBUG - Wrote b'atd1'
+2018-01-08 18:23:10,220 - 7808 - __main__ - DEBUG - Read [['atd1'], ['OK']]
+2018-01-08 18:23:10,220 - 7809 - __main__ - DEBUG - Command: b'atd1' Result: [['atd1'], ['OK']]
+2018-01-08 18:23:10,255 - 7843 - __main__ - DEBUG - Wrote b'atspb'
+2018-01-08 18:23:10,265 - 7853 - __main__ - DEBUG - Read [['atspb'], ['OK']]
+2018-01-08 18:23:10,265 - 7853 - __main__ - DEBUG - Command: b'atspb' Result: [['atspb'], ['OK']]
+2018-01-08 18:23:10,269 - 7858 - __main__ - DEBUG - Wrote b'atal'
+2018-01-08 18:23:10,301 - 7889 - __main__ - DEBUG - Read [['atal'], ['OK']]
+2018-01-08 18:23:10,302 - 7890 - __main__ - DEBUG - Command: b'atal' Result: [['atal'], ['OK']]
+2018-01-08 18:23:10,305 - 7893 - __main__ - DEBUG - Wrote b'atcm000'
+2018-01-08 18:23:10,338 - 7926 - __main__ - DEBUG - Read [['atcm000'], ['OK']]
+2018-01-08 18:23:10,338 - 7926 - __main__ - DEBUG - Command: b'atcm000' Result: [['atcm000'], ['OK']]
+2018-01-08 18:23:10,341 - 7929 - __main__ - DEBUG - Wrote b'atv1'
+2018-01-08 18:23:10,373 - 7961 - __main__ - DEBUG - Read [['atv1'], ['OK']]
+2018-01-08 18:23:10,373 - 7961 - __main__ - DEBUG - Command: b'atv1' Result: [['atv1'], ['OK']]
+2018-01-08 18:23:10,376 - 7965 - __main__ - DEBUG - Wrote b'atcf000'
+2018-01-08 18:23:10,386 - 7975 - __main__ - DEBUG - Read [['atcf000'], ['OK']]
+2018-01-08 18:23:10,387 - 7975 - __main__ - DEBUG - Command: b'atcf000' Result: [['atcf000'], ['OK']]
+2018-01-08 18:23:10,415 - 8004 - __main__ - DEBUG - Wrote b'atcfc0'
+2018-01-08 18:23:10,425 - 8013 - __main__ - DEBUG - Read [['atcfc0'], ['OK']]
+2018-01-08 18:23:10,426 - 8014 - __main__ - DEBUG - Command: b'atcfc0' Result: [['atcfc0'], ['OK']]
+2018-01-08 18:23:10,429 - 8017 - __main__ - DEBUG - Wrote b'atcaf0'
+2018-01-08 18:23:10,466 - 8055 - __main__ - DEBUG - Read [['atcaf0'], ['OK']]
+2018-01-08 18:23:10,467 - 8055 - __main__ - DEBUG - Command: b'atcaf0' Result: [['atcaf0'], ['OK']]
+2018-01-08 18:23:10,470 - 8058 - __main__ - DEBUG - Wrote b'atsh200'
+2018-01-08 18:23:10,503 - 8092 - __main__ - DEBUG - Read [['atsh200'], ['OK']]
+2018-01-08 18:23:10,506 - 8094 - __main__ - DEBUG - Wrote b'atcra202'
+2018-01-08 18:23:10,541 - 8130 - __main__ - DEBUG - Read [['atcra202'], ['OK']]
+2018-01-08 18:23:10,546 - 8134 - __main__ - DEBUG - Wrote b'02 c0 00 10 00 03 01 1'
+2018-01-08 18:23:10,627 - 8215 - __main__ - DEBUG - Read [['02', 'c0', '00', '10', '00', '03', '01', '1'], ['202', '7', '00', 'D0', '00', '03', '60', '07', '01']]
+2018-01-08 18:23:10,631 - 8220 - __main__ - DEBUG - Wrote b'atsh760'
+2018-01-08 18:23:10,671 - 8259 - __main__ - DEBUG - Read [['atsh760'], ['OK']]
+2018-01-08 18:23:10,675 - 8263 - __main__ - DEBUG - Wrote b'atcra300'
+2018-01-08 18:23:10,685 - 8273 - __main__ - DEBUG - Read [['atcra300'], ['OK']]
+2018-01-08 18:23:10,715 - 8303 - __main__ - DEBUG - Wrote b'a0 0f 8a ff 4a ff'
+2018-01-08 18:23:10,780 - 8368 - __main__ - DEBUG - Read [['a0', '0f', '8a', 'ff', '4a', 'ff'], ['300', '6', 'A1', '0F', '8A', 'FF', '4A', 'FF']]
+2018-01-08 18:23:10,785 - 8374 - __main__ - DEBUG - Wrote b' 30 00 02 10 89'
+2018-01-08 18:23:10,822 - 8410 - __main__ - DEBUG - Read [['STOPPED'], ['>30', '00', '02', '10', '89'], ['300', '5', '10', '00', '02', '50', '89']]
+2018-01-08 18:23:10,855 - 8443 - __main__ - DEBUG - Wrote b' b1'
+2018-01-08 18:23:10,885 - 8473 - __main__ - DEBUG - Read [['STOPPED']]
+2018-01-08 18:23:10,913 - 8501 - __main__ - DEBUG - Wrote b' 11 00 02 21 06'
+2018-01-08 18:23:11,051 - 8640 - __main__ - DEBUG - Read [['STOPPED'], ['>11', '00', '02', '21', '06'], ['300', '1', 'B2'], ['300', '8', '21', '00', '1A', '61', '06', '1A', '32', '49'], ['300', '8', '22', '18', '0A', '14', '11', '20', '30', '74'], ['300', '8', '23', '00', '00', '21', 'FA', 'F8', '21', 'FA'], ['300', '8', '14', '01', '21', 'FA', '00', '21', 'FA', '00']]
+2018-01-08 18:25:46,923 - 932 - __main__ - DEBUG - Logger initialized
+2018-01-08 18:25:50,946 - 4956 - __main__ - DEBUG - Trying to flush the recv buffer... (~2 sec wait)
+2018-01-08 18:25:52,952 - 6962 - __main__ - DEBUG - Wrote b'atd'
+2018-01-08 18:25:52,963 - 6972 - __main__ - DEBUG - Read [['atd'], ['OK']]
+2018-01-08 18:25:52,963 - 6973 - __main__ - DEBUG - Performed reset
+2018-01-08 18:25:53,974 - 7984 - __main__ - DEBUG - Wrote b'ath1'
+2018-01-08 18:25:54,009 - 8019 - __main__ - DEBUG - Read [['ath1'], ['OK']]
+2018-01-08 18:25:54,009 - 8019 - __main__ - DEBUG - Command: b'ath1' Result: [['ath1'], ['OK']]
+2018-01-08 18:25:54,013 - 8023 - __main__ - DEBUG - Wrote b'atl0'
+2018-01-08 18:25:54,023 - 8032 - __main__ - DEBUG - Read [['atl0'], ['OK']]
+2018-01-08 18:25:54,023 - 8033 - __main__ - DEBUG - Command: b'atl0' Result: [['atl0'], ['OK']]
+2018-01-08 18:25:54,049 - 8059 - __main__ - DEBUG - Wrote b'ate1'
+2018-01-08 18:25:54,058 - 8068 - __main__ - DEBUG - Read [['ate1'], ['OK']]
+2018-01-08 18:25:54,058 - 8068 - __main__ - DEBUG - Command: b'ate1' Result: [['ate1'], ['OK']]
+2018-01-08 18:25:54,062 - 8072 - __main__ - DEBUG - Wrote b'ats1'
+2018-01-08 18:25:54,102 - 8111 - __main__ - DEBUG - Read [['ats1'], ['OK']]
+2018-01-08 18:25:54,102 - 8112 - __main__ - DEBUG - Command: b'ats1' Result: [['ats1'], ['OK']]
+2018-01-08 18:25:54,105 - 8115 - __main__ - DEBUG - Wrote b'atpbc001'
+2018-01-08 18:25:54,148 - 8158 - __main__ - DEBUG - Read [['atpbc001'], ['OK']]
+2018-01-08 18:25:54,148 - 8158 - __main__ - DEBUG - Command: b'atpbc001' Result: [['atpbc001'], ['OK']]
+2018-01-08 18:25:54,152 - 8162 - __main__ - DEBUG - Wrote b'atd1'
+2018-01-08 18:25:54,199 - 8209 - __main__ - DEBUG - Read [['atd1'], ['OK']]
+2018-01-08 18:25:54,199 - 8209 - __main__ - DEBUG - Command: b'atd1' Result: [['atd1'], ['OK']]
+2018-01-08 18:25:54,203 - 8213 - __main__ - DEBUG - Wrote b'atspb'
+2018-01-08 18:25:54,213 - 8222 - __main__ - DEBUG - Read [['atspb'], ['OK']]
+2018-01-08 18:25:54,213 - 8223 - __main__ - DEBUG - Command: b'atspb' Result: [['atspb'], ['OK']]
+2018-01-08 18:25:54,217 - 8227 - __main__ - DEBUG - Wrote b'atal'
+2018-01-08 18:25:54,250 - 8260 - __main__ - DEBUG - Read [['atal'], ['OK']]
+2018-01-08 18:25:54,250 - 8260 - __main__ - DEBUG - Command: b'atal' Result: [['atal'], ['OK']]
+2018-01-08 18:25:54,254 - 8264 - __main__ - DEBUG - Wrote b'atcm000'
+2018-01-08 18:25:54,314 - 8324 - __main__ - DEBUG - Read [['atcm000'], ['OK']]
+2018-01-08 18:25:54,314 - 8324 - __main__ - DEBUG - Command: b'atcm000' Result: [['atcm000'], ['OK']]
+2018-01-08 18:25:54,318 - 8328 - __main__ - DEBUG - Wrote b'atv1'
+2018-01-08 18:25:54,328 - 8338 - __main__ - DEBUG - Read [['atv1'], ['OK']]
+2018-01-08 18:25:54,329 - 8338 - __main__ - DEBUG - Command: b'atv1' Result: [['atv1'], ['OK']]
+2018-01-08 18:25:54,355 - 8365 - __main__ - DEBUG - Wrote b'atcf000'
+2018-01-08 18:25:54,365 - 8375 - __main__ - DEBUG - Read [['atcf000'], ['OK']]
+2018-01-08 18:25:54,366 - 8375 - __main__ - DEBUG - Command: b'atcf000' Result: [['atcf000'], ['OK']]
+2018-01-08 18:25:54,369 - 8379 - __main__ - DEBUG - Wrote b'atcfc0'
+2018-01-08 18:25:54,445 - 8455 - __main__ - DEBUG - Read [['atcfc0'], ['OK']]
+2018-01-08 18:25:54,446 - 8456 - __main__ - DEBUG - Command: b'atcfc0' Result: [['atcfc0'], ['OK']]
+2018-01-08 18:25:54,449 - 8459 - __main__ - DEBUG - Wrote b'atcaf0'
+2018-01-08 18:25:54,460 - 8470 - __main__ - DEBUG - Read [['atcaf0'], ['OK']]
+2018-01-08 18:25:54,461 - 8470 - __main__ - DEBUG - Command: b'atcaf0' Result: [['atcaf0'], ['OK']]
+2018-01-08 18:25:54,487 - 8497 - __main__ - DEBUG - Wrote b'atsh200'
+2018-01-08 18:25:54,513 - 8523 - __main__ - DEBUG - Read [['atsh200'], ['OK']]
+2018-01-08 18:25:54,520 - 8530 - __main__ - DEBUG - Wrote b'atcra202'
+2018-01-08 18:25:54,544 - 8554 - __main__ - DEBUG - Read [['atcra202'], ['OK']]
+2018-01-08 18:25:54,549 - 8559 - __main__ - DEBUG - Wrote b'02 c0 00 10 00 03 01 1'
+2018-01-08 18:25:54,569 - 8579 - __main__ - DEBUG - Read [['02', 'c0', '00', '10', '00', '03', '01', '1'], ['300', '1', 'A8']]
+2018-01-08 18:25:54,577 - 8587 - __main__ - DEBUG - Wrote b'atsh760'
+2018-01-08 18:25:54,592 - 8601 - __main__ - DEBUG - Read [['atsh760'], ['OK']]
+2018-01-08 18:25:54,596 - 8606 - __main__ - DEBUG - Wrote b'atcra300'
+2018-01-08 18:25:54,611 - 8621 - __main__ - DEBUG - Read [['atcra300'], ['OK']]
+2018-01-08 18:25:54,616 - 8626 - __main__ - DEBUG - Wrote b'a0 0f 8a ff 4a ff'
+2018-01-08 18:25:54,691 - 8701 - __main__ - DEBUG - Read [['a0', '0f', '8a', 'ff', '4a', 'ff'], ['300', '6', 'A1', '0F', '8A', 'FF', '4A', 'FF']]
+2018-01-08 18:25:54,697 - 8707 - __main__ - DEBUG - Wrote b' 30 00 02 10 89'
+2018-01-08 18:25:54,724 - 8733 - __main__ - DEBUG - Read [['STOPPED'], ['>30', '00', '02', '10', '89'], ['300', '5', '10', '00', '02', '50', '89']]
+2018-01-08 18:25:54,728 - 8738 - __main__ - DEBUG - Wrote b' b1'
+2018-01-08 18:25:54,740 - 8750 - __main__ - DEBUG - Read [['STOPPED']]
+2018-01-08 18:25:54,746 - 8756 - __main__ - DEBUG - Wrote b' 11 00 02 21 06'
+2018-01-08 18:25:54,884 - 8894 - __main__ - DEBUG - Read [['1'], ['STOPPED'], ['>11', '00', '02', '21', '06'], ['300', '1', 'B2'], ['300', '8', '21', '00', '1A', '61', '06', '1A', '32', '4E'], ['300', '8', '22', '18', '0A', '14', '11', '20', '30', '74'], ['300', '8', '23', '00', '74', '21', 'FA', 'F8', '21', 'FA'], ['300', '8', '14', '01', '21', 'FA', '00', '21', 'FA', '00']]
+2018-01-08 18:25:54,888 - 8898 - __main__ - DEBUG - Wrote b' b5'
+2018-01-08 18:25:55,120 - 9130 - __main__ - DEBUG - Read [['b5'], ['NO', 'DATA']]
+2018-01-08 18:27:36,151 - 122 - __main__ - DEBUG - Logger initialized
+2018-01-08 18:27:39,001 - 2973 - __main__ - DEBUG - Trying to flush the recv buffer... (~2 sec wait)
+2018-01-08 18:27:41,006 - 4977 - __main__ - DEBUG - Wrote b'atd'
+2018-01-08 18:27:41,016 - 4987 - __main__ - DEBUG - Read [['atd'], ['OK']]
+2018-01-08 18:27:41,016 - 4988 - __main__ - DEBUG - Performed reset
+2018-01-08 18:27:42,040 - 6011 - __main__ - DEBUG - Wrote b'ath1'
+2018-01-08 18:27:42,051 - 6022 - __main__ - DEBUG - Read [['ath1'], ['OK']]
+2018-01-08 18:27:42,051 - 6022 - __main__ - DEBUG - Command: b'ath1' Result: [['ath1'], ['OK']]
+2018-01-08 18:27:42,051 - 6023 - __main__ - DEBUG - Wrote b'atl0'
+2018-01-08 18:27:42,083 - 6054 - __main__ - DEBUG - Read [['atl0'], ['OK']]
+2018-01-08 18:27:42,083 - 6055 - __main__ - DEBUG - Command: b'atl0' Result: [['atl0'], ['OK']]
+2018-01-08 18:27:42,088 - 6059 - __main__ - DEBUG - Wrote b'ate1'
+2018-01-08 18:27:42,124 - 6096 - __main__ - DEBUG - Read [['ate1'], ['OK']]
+2018-01-08 18:27:42,125 - 6096 - __main__ - DEBUG - Command: b'ate1' Result: [['ate1'], ['OK']]
+2018-01-08 18:27:42,125 - 6096 - __main__ - DEBUG - Wrote b'ats1'
+2018-01-08 18:27:42,158 - 6130 - __main__ - DEBUG - Read [['ats1'], ['OK']]
+2018-01-08 18:27:42,159 - 6130 - __main__ - DEBUG - Command: b'ats1' Result: [['ats1'], ['OK']]
+2018-01-08 18:27:42,159 - 6130 - __main__ - DEBUG - Wrote b'atpbc001'
+2018-01-08 18:27:42,194 - 6166 - __main__ - DEBUG - Read [['atpbc001'], ['OK']]
+2018-01-08 18:27:42,195 - 6166 - __main__ - DEBUG - Command: b'atpbc001' Result: [['atpbc001'], ['OK']]
+2018-01-08 18:27:42,195 - 6166 - __main__ - DEBUG - Wrote b'atd1'
+2018-01-08 18:27:42,206 - 6177 - __main__ - DEBUG - Read [['atd1'], ['OK']]
+2018-01-08 18:27:42,206 - 6177 - __main__ - DEBUG - Command: b'atd1' Result: [['atd1'], ['OK']]
+2018-01-08 18:27:42,206 - 6178 - __main__ - DEBUG - Wrote b'atspb'
+2018-01-08 18:27:42,237 - 6208 - __main__ - DEBUG - Read [['atspb'], ['OK']]
+2018-01-08 18:27:42,237 - 6208 - __main__ - DEBUG - Command: b'atspb' Result: [['atspb'], ['OK']]
+2018-01-08 18:27:42,237 - 6209 - __main__ - DEBUG - Wrote b'atal'
+2018-01-08 18:27:42,248 - 6219 - __main__ - DEBUG - Read [['atal'], ['OK']]
+2018-01-08 18:27:42,248 - 6220 - __main__ - DEBUG - Command: b'atal' Result: [['atal'], ['OK']]
+2018-01-08 18:27:42,249 - 6220 - __main__ - DEBUG - Wrote b'atcm000'
+2018-01-08 18:27:42,283 - 6254 - __main__ - DEBUG - Read [['atcm000'], ['OK']]
+2018-01-08 18:27:42,283 - 6254 - __main__ - DEBUG - Command: b'atcm000' Result: [['atcm000'], ['OK']]
+2018-01-08 18:27:42,288 - 6259 - __main__ - DEBUG - Wrote b'atv1'
+2018-01-08 18:27:42,321 - 6292 - __main__ - DEBUG - Read [['atv1'], ['OK']]
+2018-01-08 18:27:42,321 - 6293 - __main__ - DEBUG - Command: b'atv1' Result: [['atv1'], ['OK']]
+2018-01-08 18:27:42,322 - 6293 - __main__ - DEBUG - Wrote b'atcf000'
+2018-01-08 18:27:42,351 - 6322 - __main__ - DEBUG - Read [['atcf000'], ['OK']]
+2018-01-08 18:27:42,351 - 6322 - __main__ - DEBUG - Command: b'atcf000' Result: [['atcf000'], ['OK']]
+2018-01-08 18:27:42,355 - 6326 - __main__ - DEBUG - Wrote b'atcfc0'
+2018-01-08 18:27:42,388 - 6360 - __main__ - DEBUG - Read [['atcfc0'], ['OK']]
+2018-01-08 18:27:42,389 - 6360 - __main__ - DEBUG - Command: b'atcfc0' Result: [['atcfc0'], ['OK']]
+2018-01-08 18:27:42,389 - 6360 - __main__ - DEBUG - Wrote b'atcaf0'
+2018-01-08 18:27:42,401 - 6372 - __main__ - DEBUG - Read [['atcaf0'], ['OK']]
+2018-01-08 18:27:42,401 - 6372 - __main__ - DEBUG - Command: b'atcaf0' Result: [['atcaf0'], ['OK']]
+2018-01-08 18:27:42,401 - 6373 - __main__ - DEBUG - Wrote b'atsh200'
+2018-01-08 18:27:42,443 - 6415 - __main__ - DEBUG - Read [['atsh200'], ['OK']]
+2018-01-08 18:27:42,444 - 6415 - __main__ - DEBUG - Wrote b'atcra202'
+2018-01-08 18:27:42,478 - 6449 - __main__ - DEBUG - Read [['atcra202'], ['OK']]
+2018-01-08 18:27:42,478 - 6450 - __main__ - DEBUG - Wrote b'02 c0 00 10 00 03 01 1'
+2018-01-08 18:27:42,516 - 6487 - __main__ - DEBUG - Read [['02', 'c0', '00', '10', '00', '03', '01', '1'], ['300', '1', 'A8']]
+2018-01-08 18:27:42,574 - 6545 - __main__ - DEBUG - Wrote b'atsh760'
+2018-01-08 18:27:42,622 - 6593 - __main__ - DEBUG - Read [['atsh760'], ['OK']]
+2018-01-08 18:27:42,622 - 6594 - __main__ - DEBUG - Wrote b'atcra300'
+2018-01-08 18:27:42,659 - 6630 - __main__ - DEBUG - Read [['atcra300'], ['OK']]
+2018-01-08 18:27:42,665 - 6636 - __main__ - DEBUG - Wrote b'a0 0f 8a ff 4a ff'
+2018-01-08 18:27:42,702 - 6673 - __main__ - DEBUG - Read [['a0', '0f', '8a', 'ff', '4a', 'ff'], ['300', '6', 'A1', '0F', '8A', 'FF', '4A', 'FF']]
+2018-01-08 18:27:42,702 - 6674 - __main__ - DEBUG - Wrote b' 30 00 02 10 89'
+2018-01-08 18:27:42,764 - 6735 - __main__ - DEBUG - Read [['STOPPED'], ['>30', '00', '02', '10', '89'], ['300', '5', '10', '00', '02', '50', '89']]
+2018-01-08 18:27:42,769 - 6740 - __main__ - DEBUG - Wrote b' b1'
+2018-01-08 18:27:42,798 - 6770 - __main__ - DEBUG - Read [['STOPPED']]
+2018-01-08 18:27:42,799 - 6770 - __main__ - DEBUG - Wrote b' 11 00 02 21 06'
+2018-01-08 18:27:42,947 - 6918 - __main__ - DEBUG - Read [['1'], ['STOPPED'], ['>11', '00', '02', '21', '06'], ['300', '1', 'B2'], ['300', '8', '21', '00', '1A', '61', '06', '1A', '32', '52'], ['300', '8', '22', '18', '0A', '14', '11', '20', '30', '74'], ['300', '8', '23', '00', '5D', '21', 'FA', 'F8', '21', 'FA'], ['300', '8', '14', '01', '21', 'FA', '00', '21', 'FA', '00']]
+2018-01-08 18:27:42,947 - 6919 - __main__ - DEBUG - Wrote b' b5'
+2018-01-08 18:27:43,182 - 7153 - __main__ - DEBUG - Read [['b5'], ['NO', 'DATA']]
+2018-01-08 18:51:58,473 - 1018 - __main__ - DEBUG - Logger initialized
+2018-01-08 18:52:04,789 - 7335 - __main__ - DEBUG - Trying to flush the recv buffer... (~2 sec wait)
+2018-01-08 18:52:06,798 - 9343 - __main__ - DEBUG - Wrote b'atd'
+2018-01-08 18:52:06,808 - 9353 - __main__ - DEBUG - Read [['atd'], ['OK']]
+2018-01-08 18:52:06,808 - 9354 - __main__ - DEBUG - Performed reset
+2018-01-08 18:52:07,827 - 10372 - __main__ - DEBUG - Wrote b'ath1'
+2018-01-08 18:52:07,838 - 10383 - __main__ - DEBUG - Read [['ath1'], ['OK']]
+2018-01-08 18:52:07,838 - 10384 - __main__ - DEBUG - Command: b'ath1' Result: [['ath1'], ['OK']]
+2018-01-08 18:52:07,850 - 10395 - __main__ - DEBUG - Wrote b'atl0'
+2018-01-08 18:52:07,865 - 10410 - __main__ - DEBUG - Read [['atl0'], ['OK']]
+2018-01-08 18:52:07,865 - 10411 - __main__ - DEBUG - Command: b'atl0' Result: [['atl0'], ['OK']]
+2018-01-08 18:52:07,868 - 10413 - __main__ - DEBUG - Wrote b'ate1'
+2018-01-08 18:52:07,903 - 10448 - __main__ - DEBUG - Read [['ate1'], ['OK']]
+2018-01-08 18:52:07,904 - 10449 - __main__ - DEBUG - Command: b'ate1' Result: [['ate1'], ['OK']]
+2018-01-08 18:52:07,907 - 10452 - __main__ - DEBUG - Wrote b'ats1'
+2018-01-08 18:52:07,943 - 10488 - __main__ - DEBUG - Read [['ats1'], ['OK']]
+2018-01-08 18:52:07,943 - 10488 - __main__ - DEBUG - Command: b'ats1' Result: [['ats1'], ['OK']]
+2018-01-08 18:52:07,947 - 10492 - __main__ - DEBUG - Wrote b'atpbc001'
+2018-01-08 18:52:07,979 - 10524 - __main__ - DEBUG - Read [['atpbc001'], ['OK']]
+2018-01-08 18:52:07,979 - 10524 - __main__ - DEBUG - Command: b'atpbc001' Result: [['atpbc001'], ['OK']]
+2018-01-08 18:52:07,982 - 10527 - __main__ - DEBUG - Wrote b'atd1'
+2018-01-08 18:52:07,990 - 10535 - __main__ - DEBUG - Read [['atd1'], ['OK']]
+2018-01-08 18:52:07,990 - 10535 - __main__ - DEBUG - Command: b'atd1' Result: [['atd1'], ['OK']]
+2018-01-08 18:52:07,993 - 10538 - __main__ - DEBUG - Wrote b'atspb'
+2018-01-08 18:52:08,006 - 10552 - __main__ - DEBUG - Read [['atspb'], ['OK']]
+2018-01-08 18:52:08,007 - 10552 - __main__ - DEBUG - Command: b'atspb' Result: [['atspb'], ['OK']]
+2018-01-08 18:52:08,031 - 10576 - __main__ - DEBUG - Wrote b'atal'
+2018-01-08 18:52:08,041 - 10587 - __main__ - DEBUG - Read [['atal'], ['OK']]
+2018-01-08 18:52:08,042 - 10587 - __main__ - DEBUG - Command: b'atal' Result: [['atal'], ['OK']]
+2018-01-08 18:52:08,046 - 10591 - __main__ - DEBUG - Wrote b'atcm000'
+2018-01-08 18:52:08,078 - 10623 - __main__ - DEBUG - Read [['atcm000'], ['OK']]
+2018-01-08 18:52:08,078 - 10623 - __main__ - DEBUG - Command: b'atcm000' Result: [['atcm000'], ['OK']]
+2018-01-08 18:52:08,082 - 10627 - __main__ - DEBUG - Wrote b'atv1'
+2018-01-08 18:52:08,107 - 10652 - __main__ - DEBUG - Read [['atv1'], ['OK']]
+2018-01-08 18:52:08,107 - 10652 - __main__ - DEBUG - Command: b'atv1' Result: [['atv1'], ['OK']]
+2018-01-08 18:52:08,121 - 10666 - __main__ - DEBUG - Wrote b'atcf000'
+2018-01-08 18:52:08,130 - 10675 - __main__ - DEBUG - Read [['atcf000'], ['OK']]
+2018-01-08 18:52:08,130 - 10675 - __main__ - DEBUG - Command: b'atcf000' Result: [['atcf000'], ['OK']]
+2018-01-08 18:52:08,135 - 10680 - __main__ - DEBUG - Wrote b'atcfc0'
+2018-01-08 18:52:08,145 - 10690 - __main__ - DEBUG - Read [['atcfc0'], ['OK']]
+2018-01-08 18:52:08,145 - 10690 - __main__ - DEBUG - Command: b'atcfc0' Result: [['atcfc0'], ['OK']]
+2018-01-08 18:52:08,148 - 10693 - __main__ - DEBUG - Wrote b'atcaf0'
+2018-01-08 18:52:08,159 - 10704 - __main__ - DEBUG - Read [['atcaf0'], ['OK']]
+2018-01-08 18:52:08,159 - 10705 - __main__ - DEBUG - Command: b'atcaf0' Result: [['atcaf0'], ['OK']]
+2018-01-08 18:52:08,163 - 10708 - __main__ - DEBUG - Wrote b'atsh200'
+2018-01-08 18:52:08,174 - 10719 - __main__ - DEBUG - Read [['atsh200'], ['OK']]
+2018-01-08 18:52:08,177 - 10722 - __main__ - DEBUG - Wrote b'atcra202'
+2018-01-08 18:52:08,185 - 10730 - __main__ - DEBUG - Read [['atcra202'], ['OK']]
+2018-01-08 18:52:08,190 - 10735 - __main__ - DEBUG - Wrote b'02 c0 00 10 00 03 01 1'
+2018-01-08 18:52:08,231 - 10776 - __main__ - DEBUG - Read [['02', 'c0', '00', '10', '00', '03', '01', '1'], ['CAN', 'ERROR']]
+2018-01-08 18:52:08,235 - 10780 - __main__ - DEBUG - Wrote b'atsh760'
+2018-01-08 18:52:08,244 - 10789 - __main__ - DEBUG - Read [['atsh760'], ['OK']]
+2018-01-08 18:52:08,247 - 10792 - __main__ - DEBUG - Wrote b'atcra300'
+2018-01-08 18:52:08,256 - 10802 - __main__ - DEBUG - Read [['atcra300'], ['OK']]
+2018-01-08 18:52:08,266 - 10811 - __main__ - DEBUG - Wrote b'a0 0f 8a ff 4a ff'
+2018-01-08 18:52:08,338 - 10883 - __main__ - DEBUG - Read [['a0', '0f', '8a', 'ff', '4a', 'ff'], ['CAN', 'ERROR']]
+2018-01-08 18:52:08,376 - 10921 - __main__ - DEBUG - Wrote b' 30 00 02 10 89'
+2018-01-08 18:52:08,413 - 10958 - __main__ - DEBUG - Read [['30', '00', '02', '10', '89'], ['CAN', 'ERROR']]
+2018-01-08 18:52:08,456 - 11001 - __main__ - DEBUG - Wrote b' b1'
+2018-01-08 18:52:08,461 - 11007 - __main__ - DEBUG - Read [['b1']]
+2018-01-08 18:52:08,466 - 11011 - __main__ - DEBUG - Wrote b' 11 00 02 21 06'
+2018-01-08 18:52:08,495 - 11041 - __main__ - DEBUG - Read [['CAN', 'ERROR']]
+2018-01-08 18:52:08,500 - 11045 - __main__ - DEBUG - Wrote b' b5'
+2018-01-08 18:52:08,501 - 11046 - __main__ - DEBUG - Read [['02', '21', '06'], ['CAN', 'ERROR']]
+2018-01-08 18:53:03,942 - 899 - __main__ - DEBUG - Logger initialized
+2018-01-08 18:53:13,819 - 10777 - __main__ - DEBUG - Trying to flush the recv buffer... (~2 sec wait)
+2018-01-08 18:53:15,829 - 12786 - __main__ - DEBUG - Wrote b'atd'
+2018-01-08 18:53:15,840 - 12797 - __main__ - DEBUG - Read [['atd'], ['OK']]
+2018-01-08 18:53:15,840 - 12797 - __main__ - DEBUG - Performed reset
+2018-01-08 18:53:16,858 - 13816 - __main__ - DEBUG - Wrote b'ath1'
+2018-01-08 18:53:16,896 - 13853 - __main__ - DEBUG - Read [['ath1'], ['OK']]
+2018-01-08 18:53:16,897 - 13854 - __main__ - DEBUG - Command: b'ath1' Result: [['ath1'], ['OK']]
+2018-01-08 18:53:16,900 - 13857 - __main__ - DEBUG - Wrote b'atl0'
+2018-01-08 18:53:16,932 - 13889 - __main__ - DEBUG - Read [['atl0'], ['OK']]
+2018-01-08 18:53:16,933 - 13890 - __main__ - DEBUG - Command: b'atl0' Result: [['atl0'], ['OK']]
+2018-01-08 18:53:16,960 - 13917 - __main__ - DEBUG - Wrote b'ate1'
+2018-01-08 18:53:16,969 - 13926 - __main__ - DEBUG - Read [['ate1'], ['OK']]
+2018-01-08 18:53:16,969 - 13926 - __main__ - DEBUG - Command: b'ate1' Result: [['ate1'], ['OK']]
+2018-01-08 18:53:16,973 - 13930 - __main__ - DEBUG - Wrote b'ats1'
+2018-01-08 18:53:17,007 - 13965 - __main__ - DEBUG - Read [['ats1'], ['OK']]
+2018-01-08 18:53:17,008 - 13965 - __main__ - DEBUG - Command: b'ats1' Result: [['ats1'], ['OK']]
+2018-01-08 18:53:17,011 - 13968 - __main__ - DEBUG - Wrote b'atpbc001'
+2018-01-08 18:53:17,050 - 14007 - __main__ - DEBUG - Read [['atpbc001'], ['OK']]
+2018-01-08 18:53:17,050 - 14007 - __main__ - DEBUG - Command: b'atpbc001' Result: [['atpbc001'], ['OK']]
+2018-01-08 18:53:17,054 - 14011 - __main__ - DEBUG - Wrote b'atd1'
+2018-01-08 18:53:17,090 - 14047 - __main__ - DEBUG - Read [['atd1'], ['OK']]
+2018-01-08 18:53:17,090 - 14047 - __main__ - DEBUG - Command: b'atd1' Result: [['atd1'], ['OK']]
+2018-01-08 18:53:17,094 - 14051 - __main__ - DEBUG - Wrote b'atspb'
+2018-01-08 18:53:17,103 - 14061 - __main__ - DEBUG - Read [['atspb'], ['OK']]
+2018-01-08 18:53:17,104 - 14061 - __main__ - DEBUG - Command: b'atspb' Result: [['atspb'], ['OK']]
+2018-01-08 18:53:17,131 - 14088 - __main__ - DEBUG - Wrote b'atal'
+2018-01-08 18:53:17,165 - 14122 - __main__ - DEBUG - Read [['atal'], ['OK']]
+2018-01-08 18:53:17,165 - 14122 - __main__ - DEBUG - Command: b'atal' Result: [['atal'], ['OK']]
+2018-01-08 18:53:17,169 - 14126 - __main__ - DEBUG - Wrote b'atcm000'
+2018-01-08 18:53:17,179 - 14136 - __main__ - DEBUG - Read [['atcm000'], ['OK']]
+2018-01-08 18:53:17,179 - 14136 - __main__ - DEBUG - Command: b'atcm000' Result: [['atcm000'], ['OK']]
+2018-01-08 18:53:17,206 - 14163 - __main__ - DEBUG - Wrote b'atv1'
+2018-01-08 18:53:17,216 - 14173 - __main__ - DEBUG - Read [['atv1'], ['OK']]
+2018-01-08 18:53:17,217 - 14174 - __main__ - DEBUG - Command: b'atv1' Result: [['atv1'], ['OK']]
+2018-01-08 18:53:17,220 - 14177 - __main__ - DEBUG - Wrote b'atcf000'
+2018-01-08 18:53:17,259 - 14216 - __main__ - DEBUG - Read [['atcf000'], ['OK']]
+2018-01-08 18:53:17,259 - 14216 - __main__ - DEBUG - Command: b'atcf000' Result: [['atcf000'], ['OK']]
+2018-01-08 18:53:17,263 - 14220 - __main__ - DEBUG - Wrote b'atcfc0'
+2018-01-08 18:53:17,296 - 14253 - __main__ - DEBUG - Read [['atcfc0'], ['OK']]
+2018-01-08 18:53:17,296 - 14253 - __main__ - DEBUG - Command: b'atcfc0' Result: [['atcfc0'], ['OK']]
+2018-01-08 18:53:17,300 - 14257 - __main__ - DEBUG - Wrote b'atcaf0'
+2018-01-08 18:53:17,335 - 14292 - __main__ - DEBUG - Read [['atcaf0'], ['OK']]
+2018-01-08 18:53:17,335 - 14292 - __main__ - DEBUG - Command: b'atcaf0' Result: [['atcaf0'], ['OK']]
+2018-01-08 18:53:17,339 - 14296 - __main__ - DEBUG - Wrote b'atsh200'
+2018-01-08 18:53:17,372 - 14329 - __main__ - DEBUG - Read [['atsh200'], ['OK']]
+2018-01-08 18:53:17,377 - 14334 - __main__ - DEBUG - Wrote b'atcra202'
+2018-01-08 18:53:17,386 - 14343 - __main__ - DEBUG - Read [['atcra202'], ['OK']]
+2018-01-08 18:53:17,415 - 14372 - __main__ - DEBUG - Wrote b'02 c0 00 10 00 03 01 1'
+2018-01-08 18:53:17,462 - 14420 - __main__ - DEBUG - Read [['02', 'c0', '00', '10', '00', '03', '01', '1'], ['202', '7', '00', 'D0', '00', '03', '60', '07', '01']]
+2018-01-08 18:53:17,488 - 14445 - __main__ - DEBUG - Wrote b'atsh760'
+2018-01-08 18:53:17,522 - 14479 - __main__ - DEBUG - Read [['atsh760'], ['OK']]
+2018-01-08 18:53:17,527 - 14484 - __main__ - DEBUG - Wrote b'atcra300'
+2018-01-08 18:53:17,561 - 14518 - __main__ - DEBUG - Read [['atcra300'], ['OK']]
+2018-01-08 18:53:17,567 - 14524 - __main__ - DEBUG - Wrote b'a0 0f 8a ff 4a ff'
+2018-01-08 18:53:17,606 - 14563 - __main__ - DEBUG - Read [['a0', '0f', '8a', 'ff', '4a', 'ff'], ['300', '6', 'A1', '0F', '8A', 'FF', '4A', 'FF']]
+2018-01-08 18:53:17,612 - 14569 - __main__ - DEBUG - Wrote b' 30 00 02 10 89'
+2018-01-08 18:53:17,650 - 14607 - __main__ - DEBUG - Read [['STOPPED'], ['>30', '00', '02', '10', '89'], ['300', '5', '10', '00', '02', '50', '89']]
+2018-01-08 18:53:17,678 - 14635 - __main__ - DEBUG - Wrote b' b1'
+2018-01-08 18:53:17,682 - 14639 - __main__ - DEBUG - Read [['STOPPED']]
+2018-01-08 18:53:17,713 - 14670 - __main__ - DEBUG - Wrote b' 11 00 02 21 06'
+2018-01-08 18:53:17,846 - 14803 - __main__ - DEBUG - Read [['STOPPED'], ['>11', '00', '02', '21', '06'], ['300', '1', 'B2'], ['300', '8', '21', '00', '1A', '61', '06', '1A', '32', '87'], ['300', '8', '22', '18', '0A', '14', '11', '20', '30', '74'], ['300', '8', '23', '00', '00', '21', 'FA', 'F8', '21', 'FA'], ['300', '8', '14', '01', '21', 'FA', '00', '21', 'FA', '00']]
+2018-01-08 18:53:17,850 - 14807 - __main__ - DEBUG - Wrote b' b5'
+2018-01-08 18:53:18,076 - 15033 - __main__ - DEBUG - Read [['b5'], ['NO', 'DATA']]
